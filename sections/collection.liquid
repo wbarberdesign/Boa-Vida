@@ -1,0 +1,113 @@
+{% paginate collection.products by section.settings.collection_pagination_number %}
+<section data-section-id={{ collection.handle }} data-products-per-page={{ section.settings.collection_pagination_number }}>
+    <div class="gc collection-grid">
+        <div class="collection-filters-container r-all">
+            <div class="collection-filters sticky top-100">
+                <h1 class="offset-bottom-small">{{ collection.title }}</h1>
+                {% if section.blocks.size > 0 %}
+                    {% include 'collection-filter-group', userSetFilterGroup: 'style' %}
+                    {% include 'collection-filter-group', userSetFilterGroup: 'sizes' %}
+                    {% include 'collection-filter-group', userSetFilterGroup: 'colours' %}
+                    {% include 'collection-filter-group', userSetFilterGroup: 'edits' %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="gc collection-inner-grid m-r-2">
+            {% for product in collection.products %}
+                {% include 'product-card' %}
+                {% else %}
+                <p>no matches</p>
+            {% endfor %}
+        </div>
+        {% if paginate.pages > 1 %}
+            <section class="d-2-3 t-1-6 m-1-3" data-section-id="collection-pagination">
+                {% include 'accessible-pagination' %}
+            </section>
+        {% endif %}
+        {% endpaginate %}
+    </div>
+</section>
+
+{% schema %}
+{
+    "settings": [
+        {
+            "type": "number",
+            "id": "collection_pagination_number",
+            "label": "Products Per Page",
+            "default": 12
+        }
+    ],
+    "blocks": [ 
+        {
+            "name": "Collection FIlter",
+            "type": "Navigation",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection_filter",
+                    "label": "Collection Filter"
+                },
+                {
+                    "type": "select",
+                    "id": "filter_group",
+                    "label": "Filter Group",
+                    "options": [
+                        {
+                            "value": "style",
+                            "label": "Style"
+                        },
+                        {
+                            "value": "sizes",
+                            "label": "Sizes"
+                        },
+                        {
+                            "value": "colours",
+                            "label": "Colours"
+                        },
+                        {
+                            "value": "edits",
+                            "label": "Edits"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Tag FIlter",
+            "type": "Filter",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "tag_filter_text",
+                    "label": "Tag Filter Text",
+                    "info": "How the filter is displayed on the site. This needs to match the product tag exactly."
+                },
+                {
+                    "type": "select",
+                    "id": "filter_group",
+                    "label": "Filter Group",
+                    "options": [
+                        {
+                            "value": "style",
+                            "label": "Style"
+                        },
+                        {
+                            "value": "Sizes",
+                            "label": "sizes"
+                        },
+                        {
+                            "value": "colours",
+                            "label": "Colours"
+                        },
+                        {
+                            "value": "Edits",
+                            "label": "edits"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

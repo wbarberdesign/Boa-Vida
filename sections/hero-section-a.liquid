@@ -1,0 +1,114 @@
+<section data-section-id="hero-section-a">
+    <div class="gc">
+        <div class="d-1-7 m-1-13">
+            {% if section.settings.hero_image != blank %}
+                {% include 'image', 
+                    imageFile: section.settings.hero_image,
+                    userSetAspectRatio: section.settings.image_ratio,
+                    imageBleed: section.settings.hero_image_bleed
+                %}
+            {% endif %}
+        </div>
+        <div class="d-8-12 m-1-13 flex flex-middle flex-center">
+            <article>
+                {% if section.settings.heading != blank %}
+                    {% include 'heading', text: section.settings.heading %}
+                {% endif %}
+                {% if section.settings.paragraph != blank %}
+                    <div class="max-width-350">{{ section.settings.paragraph | html }}</div>
+                {% endif %}
+                {% if section.settings.call_to_action_text != blank 
+                    and section.settings.call_to_action_url != blank %}
+                    {% include 'button', 
+                        text: section.settings.call_to_action_text,
+                        url: section.settings.call_to_action_url,
+                        type: 'arrow-link'
+                    %}
+                {% endif %}
+            </article>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "hero_image",
+            "label": "Hero Image"
+        },
+        {
+            "type": "select",
+            "id": "image_ratio",
+            "label": "Hero Image Ratio",
+            "options": [
+                {
+                    "value": "ratio-3-2",
+                    "label": "Landscape",
+                    "group": "ratio"
+                },
+                {
+                    "value": "ratio-2-3",
+                    "label": "Portrait",
+                    "group": "ratio"
+                },
+                {
+                    "value": "ratio-1-1",
+                    "label": "Square",
+                    "group": "ratio"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "hero_image_bleed",
+            "label": "Hero Image Bleed",
+            "options": [
+                {
+                    "value": "to-left",
+                    "label": "To Left",
+                    "group": "bleed"
+                },
+                {
+                    "value": "to-right",
+                    "label": "To Right",
+                    "group": "bleed"
+                },
+                {
+                    "value": "none",
+                    "label": "None",
+                    "group": "bleed"
+                }
+            ],
+            "default": "to-left"
+        },
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Paragraph"
+        },
+        {
+            "type": "text",
+            "id": "call_to_action_text",
+            "label": "Call to action text"
+        },
+        {
+            "type": "url",
+            "id": "call_to_action_url",
+            "label": "Call to action url"
+        }
+    ],
+    "presets": [
+        {
+            "category": "Mara & Mine",
+            "name":"Hero Section A"
+        }
+    ]
+}
+{% endschema %}

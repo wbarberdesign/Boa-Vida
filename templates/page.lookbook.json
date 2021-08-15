@@ -1,0 +1,14 @@
+{
+    "name": "Lookbook",
+    "sections": {
+        "page-boutiques": {
+            "type": "page-lookbook",
+            "settings": {
+            "show_vendor": true
+            }
+        }
+    },
+    "order": [
+        "page-lookbook"
+    ]
+}

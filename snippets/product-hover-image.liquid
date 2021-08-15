@@ -1,0 +1,8 @@
+{% if product.metafields.product.hover_image %}
+    {% for image in product.metafields.product.hover_image %}
+        {% include 'metafield-image',
+            imageFile: image,
+            userSetAspectRatio: 'ratio-2-3'  
+        %}
+    {% endfor %}
+{% endif %}

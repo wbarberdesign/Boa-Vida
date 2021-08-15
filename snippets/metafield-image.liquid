@@ -1,0 +1,32 @@
+{%- comment -%}
+    GET USER INPUT SETTINGS FOR IMAGE
+{%- endcomment -%}
+{%- if imageFile != blank -%}
+    {% assign metafieldImageSrc = imageFile.cloudinary_src %}
+    {%- if image.height > image.width -%}
+        {%- assign aspectRatio = 'ratio-2-3' -%}
+    {%- else -%}
+        {% assign aspectRatio = 'ratio-3-2' -%}
+    {%- else -%}
+        {%- assign aspectRatio = 'ratio-1-1' -%}
+{%- endif -%}
+
+{%- if userSetAspectRatio -%}
+    {%- assign aspectRatio = userSetAspectRatio -%}
+{% endif %}
+
+{%- assign imageFit='' -%}
+{%- if userSetImageFit -%}
+    {%- assign imageFit = userSetImageFit -%}
+{% endif %}
+
+<div class="image-container {{ aspectRatio }} image-bleed-{{ imageBleed }} {{ imageFit }}">
+    <img 
+        class="lazy content"
+        src="{{ metafieldImageSrc | append: 'w_80,q_20' }}" 
+        data-srcset="{{ metafieldImageSrc | append: 'w_200,q_70'  }} 200w, {{ metafieldImageSrc | append: 'w_400'  }} 400w, {{ metafieldImageSrc | append: 'w_600'  }} 600w,  {{ metafieldImageSrc | append: 'w_1100'  }} 1100w, {{ metafieldImageSrc | append: 'w_1400'  }} 1400w, {{ metafieldImageSrc | append: 'w_2000'  }} 2000w"
+        alt="{{ imageFile.alt }}" 
+    />
+</div>
+{%- endif -%}
+

@@ -1,0 +1,13 @@
+{% section 'product-template' %}
+{% include 'product-size-guide' %}
+{% section 'product-recomendations' %}
+
+<script>
+  const productSizeGuide=document.querySelector('.product-size-guide-container');
+  document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener("click", function(e){
+      e.target.hasAttribute('data-toggle-product-size-guide') ?
+        productSizeGuide.classList.toggle('active') : null
+    });
+  })
+</script>

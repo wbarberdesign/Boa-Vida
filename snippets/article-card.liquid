@@ -1,0 +1,22 @@
+<article 
+    class="product-card"
+    {%- if hoverImage != false -%}data-hover-image{%- endif -%}>
+    <a href="{{ article.url }}">
+        <div class="product-card-main-container">
+            {% if  article.metafields.accentuate.image != blank %}
+                {% for value in article.metafields.accentuate.image %}
+                    {% if forloop.index == 1 %}
+                        {% for image in value %}
+                            {% include 'metafield-image',
+                                imageFile: image,
+                                userSetAspectRatio: 'ratio-2-3'  
+                            %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <p>{{ article.title }}</p>
+            <p class="small">{{ article.published_at | date: "%b %d %y" }}</p>
+        </div>
+    </a>
+</article>

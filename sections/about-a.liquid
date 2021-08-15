@@ -1,0 +1,172 @@
+<section data-section-id="hero-section-b">
+    <div class="gc">
+        <div class="d-1-7 m-1-13">
+            {% if section.settings.hero_image_a != blank %}
+                {% include 'image', 
+                    imageFile: section.settings.hero_image_a,
+                    userSetAspectRatio: section.settings.hero_image_a_ratio,
+                    imageBleed: section.settings.hero_image_a_bleed 
+                %}
+            {% endif %}
+        </div>
+        <div class="d-8-13 m-1-13 flex flex-column flex-to-top flex-start">
+            <article class="ratio-3-2 m-ratio-auto">
+                <div class="content">
+                    {% if section.settings.heading != blank %}
+                        {% include 'heading', text: section.settings.heading %}
+                    {% endif %}
+                    {% if section.settings.paragraph != blank %}
+                        <div class="max-width-350">{{ section.settings.paragraph | html }}</div>
+                    {% endif %}
+                    {% if section.settings.call_to_action_text != blank 
+                        and section.settings.call_to_action_url != blank %}
+                        {% include 'button', 
+                            text: section.settings.call_to_action_text,
+                            url: section.settings.call_to_action_url
+                        %}
+                    {% endif %}
+                </div>
+            </article>
+            {% if section.settings.hero_image_b != blank %}
+                {% include 'image', 
+                    imageFile: section.settings.hero_image_b,
+                    userSetAspectRatio: section.settings.hero_image_b_ratio,
+                    imageBleed: section.settings.hero_image_b_bleed
+                %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "hero_image_a",
+            "label": "Hero Image A"
+        },
+        {
+            "type": "select",
+            "id": "hero_image_a_ratio",
+            "label": "Hero Image A Ratio",
+            "options": [
+                {
+                    "value": "ratio-3-2",
+                    "label": "Landscape",
+                    "group": "ratio"
+                },
+                {
+                    "value": "ratio-2-3",
+                    "label": "Portrait",
+                    "group": "ratio"
+                },
+                {
+                    "value": "ratio-1-1",
+                    "label": "Square",
+                    "group": "ratio"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "hero_image_a_bleed",
+            "label": "Hero Image A Bleed",
+            "options": [
+                {
+                    "value": "to-left",
+                    "label": "To Left",
+                    "group": "bleed"
+                },
+                {
+                    "value": "to-right",
+                    "label": "To Right",
+                    "group": "bleed"
+                },
+                {
+                    "value": "none",
+                    "label": "None",
+                    "group": "bleed"
+                }
+            ],
+            "default": "none"
+        },
+        {
+            "type": "image_picker",
+            "id": "hero_image_b",
+            "label": "Hero Image B"
+        },
+        {
+            "type": "select",
+            "id": "hero_image_b_ratio",
+            "label": "Hero Image B Ratio",
+            "options": [
+                {
+                    "value": "ratio-3-2",
+                    "label": "Landscape",
+                    "group": "ratio"
+                },
+                {
+                    "value": "ratio-2-3",
+                    "label": "Portrait",
+                    "group": "ratio"
+                },
+                {
+                    "value": "ratio-1-1",
+                    "label": "Square",
+                    "group": "ratio"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "hero_image_b_bleed",
+            "label": "Hero Image B Bleed",
+            "options": [
+                {
+                    "value": "to-left",
+                    "label": "To Left",
+                    "group": "bleed"
+                },
+                {
+                    "value": "to-right",
+                    "label": "To Right",
+                    "group": "bleed"
+                },
+                {
+                    "value": "none",
+                    "label": "None",
+                    "group": "bleed"
+                }
+            ],
+            "default": "none"
+        },
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Paragraph"
+        },
+        {
+            "type": "text",
+            "id": "call_to_action_text",
+            "label": "Call to action text"
+        },
+        {
+            "type": "url",
+            "id": "call_to_action_url",
+            "label": "Call to action url"
+        }
+    ],
+    "presets": [
+        {
+            "category": "Mara & Mine",
+            "name":"About A"
+        }
+    ]
+}
+{% endschema %}

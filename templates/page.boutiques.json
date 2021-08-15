@@ -1,0 +1,14 @@
+{
+    "name": "Boutiques",
+    "sections": {
+        "page-boutiques": {
+            "type": "page-boutiques",
+            "settings": {
+            "show_vendor": true
+            }
+        }
+    },
+    "order": [
+        "page-boutiques"
+    ]
+}

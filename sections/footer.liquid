@@ -1,0 +1,43 @@
+<footer>
+    <div class="gc">
+        {% if section.settings.footer_menu_a %}
+            <div class="span-3 m-span-6">
+                <ul class="linklist">
+                    {% assign menu_a = section.settings.footer_menu_a.handle %}
+                    {% for link in linklists[menu_a].links %}
+                        <li><a class="small" href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if section.settings.footer_menu_b.links %}
+            <div class="span-3 m-span-6">
+                <ul class="linklist">
+                    {% assign menu_b = section.settings.footer_menu_b.handle %}
+                    {% for link in linklists[menu_b].links %}
+                        <li><a class="small" href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</footer>
+
+{% schema %}
+{
+    "settings": [
+        {
+            "type": "link_list",
+            "id": "footer_menu_a",
+            "label": "Footer Menu A",
+            "info": "Please create a menu under online store / Navigation"
+        },
+        {
+            "type": "link_list",
+            "id": "footer_menu_b",
+            "label": "Footer Menu B",
+            "info": "Please create a menu under online store / Navigation"
+        }
+    ]
+}
+{% endschema %}

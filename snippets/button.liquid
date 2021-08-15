@@ -1,0 +1,11 @@
+{% if url != blank %}
+    <a href="{{ url }}">
+{% endif %}
+    <button class="btn {% if type %}{{ type }}{% else %}arrow-link{% endif %}">
+        {% if text != blank %}
+            {{ text }}
+        {% endif %}
+    </button>
+{% if url != blank %}
+    </a>
+{% endif %}   

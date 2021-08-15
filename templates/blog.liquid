@@ -1,0 +1,7 @@
+{% paginate blog.articles by 5 %}
+{% section 'blog-template' %}
+{% if paginate.pages > 1 %}
+  {{ paginate | default_pagination }}
+{% endif %}
+
+{% endpaginate %}
