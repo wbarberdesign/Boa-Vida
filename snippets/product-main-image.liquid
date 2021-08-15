@@ -1,8 +1,0 @@
-{% if product.metafields.product.main_image %}
-    {% for image in product.metafields.product.main_image %}
-        {% include 'metafield-image',
-            imageFile: image,
-            userSetAspectRatio: 'ratio-2-3'
-        %}
-    {% endfor %}
-{% endif %}
