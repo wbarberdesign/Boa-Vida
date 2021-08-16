@@ -1,0 +1,49 @@
+// USE VARIABLES FOR GENERAL SETTINGS
+@import '_variables.scss';
+@import '_reset.scss';
+@import '_flex.scss';
+@import '_mixins.scss';
+@import '_flex.scss';
+@import '_grid.scss';
+@import '_aspectRatios.scss';
+@import '_fontFace.scss';
+@import '_text.scss';
+@import '_swiper.scss';
+@import '_goCart.scss';
+
+.splash-screen {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    border: 2rem solid white;
+    .logo {
+        position: absolute;
+        left: calc(50% - 60px);
+        top: 4rem;
+        background: white;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+    .gc {
+        grid-gap: 2rem;
+        height: 100%;
+        .wholesale {
+            background: #EEEEEE;
+        }
+        .shop {
+            background: #E6E6E6;
+        }
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid--single {
+    display: grid;
+    grid-template-columns: 100%;
+    height: 100%;
+}
