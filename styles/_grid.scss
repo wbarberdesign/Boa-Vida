@@ -23,6 +23,8 @@
     }
     @for $end from 0 through $gridColumnLast {
         .d-#{$start}-#{$end} { grid-column: #{$start} / #{$end}; }
+        .r-#{$start}-#{$end} { grid-row: #{$start} / #{$end} }
+
     }
 }
 // TABLET

@@ -1,0 +1,74 @@
+<section class="full-width no-pad">
+    <div class="gc">
+        <div class="d-1-13 r-1">
+            {% if section.settings.video %}
+                <video playsinline muted loop autoplay no-controls>
+                    <source src="{{ section.settings.video }}" />
+                </video>
+            {% endif %}
+        </div>
+        <div class="d-4-10 r-1 flex flex-middle flex-center flex-column text-center" style="z-index: 2;">
+            {% if section.settings.hero_statement %}
+                <blockquote class="white">{{ section.settings.hero_statement | markdown }}</blockquote>
+            {% endif %}
+            <div class="flex-r">
+                {% if section.settings.cta_one_link %}
+                    {% include 'button' 
+                        text: section.settings.cta_one_text,
+                        url: section.settings.cta_one_link
+                    %}
+                {% endif %}
+                {% if section.settings.cta_two_link %}
+                    {% include 'button' 
+                        text: section.settings.cta_two_text,
+                        url: section.settings.cta_two_link
+                    %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "settings": [
+        {
+            "type": "text",
+            "id": "video",
+            "label": "Video Background",
+            "info": "Upload a video file < 20mb to shopify / files and paste the link above."
+        },
+        {
+            "type": "richtext",
+            "id": "hero_statement",
+            "label": "Hero Statement"
+        },
+        {
+            "type": "text",
+            "id": "cta_one_text",
+            "label": "Button One Text"
+        },
+        {
+            "type": "url",
+            "id": "cta_one_link",
+            "label": "Button One Link"
+        },
+        {
+            "type": "text",
+            "id": "cta_two_text",
+            "label": "Button Two Text"
+        },
+        {
+            "type": "url",
+            "id": "cta_two_link",
+            "label": "Button Two Link"
+        }
+    ],
+    "presets": [
+        {
+            "category": "Home",
+            "name":"Home Intro"
+        }
+    ]
+}
+{% endschema %}

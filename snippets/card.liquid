@@ -1,0 +1,31 @@
+{%- comment -%}
+    USAGE:
+        {% include 'card',
+            context: 'product' || 'article' || 'blog' ...,
+            imageFile: <IMAGE>,
+            title: <TITLE>,
+            subtitle: <SUBTITLE>,
+            cta_url: <LINK>,
+            cta_text: <LINKTEXT>
+        %}
+{%- endcomment -%}
+
+<article class="card {{ context }}">
+    {% include 'image',
+        imageFile: imageFile
+    %}
+    <div class="flex flex-s-between">
+        <div class="card--text">
+            <h4>{{ title }}</h4>
+            {% if subtitle %}
+                <p class="grey">{{ subtitle }}</p>
+            {% endif %}
+        </div>
+        <div class="card--cta">
+            {% include 'button',
+                url: cta_url,
+                text: cta_text
+            %}
+        </div>
+    </div>
+</article>

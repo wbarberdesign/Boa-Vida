@@ -1,6 +1,14 @@
 @font-face {
-    font-family: 'SofiaBold';
+    font-family: 'Sofia-Bold';
     src: url('https://cdn.shopify.com/s/files/1/0582/1284/3714/files/SofiaProBold.otf?v=1629069156');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sofia-Regular';
+    src: url('https://cdn.shopify.com/s/files/1/0582/1284/3714/files/SofiaProRegular.otf?v=1629069156');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

@@ -1,0 +1,9 @@
+{% if url %}
+<a href="{{ url }}">
+{% endif %}
+    <button class="btn {{ type }}">
+        {{ text }}
+    </button>
+{% if url %}
+</a>
+{% endif %}
