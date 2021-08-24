@@ -1,8 +1,15 @@
 {
-  "name": "Home",
   "sections": {
     "intro": {
-      "type": "home-intro"
+      "type": "home-intro",
+      "settings": {
+        "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0582\/1284\/3714\/files\/landingpage-2.mp4?v=1629755902",
+        "hero_statement": "<p>Enter some text here<\/p>",
+        "cta_one_text": "Shop Boa Vida",
+        "cta_one_link": "shopify:\/\/collections\/all",
+        "cta_two_text": "Wholesale",
+        "cta_two_link": "shopify:\/\/products\/pure-acai"
+      }
     }
   },
   "order": [
