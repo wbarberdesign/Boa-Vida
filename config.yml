@@ -2,3 +2,5 @@ development:
   password: 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
   theme_id: "125783802050"
   store: boa-vida-acai.myshopify.com
+  ignores: 
+    - index.json
