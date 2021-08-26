@@ -15,13 +15,15 @@
                 {% if section.settings.cta_one_link %}
                     {% include 'button' 
                         text: section.settings.cta_one_text,
-                        url: section.settings.cta_one_link
+                        url: section.settings.cta_one_link,
+                        type: 'primary'
                     %}
                 {% endif %}
                 {% if section.settings.cta_two_link %}
                     {% include 'button' 
                         text: section.settings.cta_two_text,
-                        url: section.settings.cta_two_link
+                        url: section.settings.cta_two_link,
+                        type: 'secondary'
                     %}
                 {% endif %}
             </div>
