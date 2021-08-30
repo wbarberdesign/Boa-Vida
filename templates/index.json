@@ -10,9 +10,116 @@
         "cta_two_text": "Wholesale",
         "cta_two_link": "shopify:\/\/products\/pure-acai"
       }
+    },
+    "163000506352617cd9": {
+      "type": "featured-products",
+      "blocks": {
+        "8b5ece62-b252-4010-9087-18a2130046e9": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        },
+        "ea1b855e-0199-4dcd-b694-9786625690ff": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        },
+        "98ac12b4-ee96-4bcc-b307-7aec221e01dc": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        }
+      },
+      "block_order": [
+        "8b5ece62-b252-4010-9087-18a2130046e9",
+        "ea1b855e-0199-4dcd-b694-9786625690ff",
+        "98ac12b4-ee96-4bcc-b307-7aec221e01dc"
+      ],
+      "settings": {
+        "title": "",
+        "cta_link": "shopify:\/\/collections\/all",
+        "cta_text": "Shop All"
+      }
+    },
+    "163000506855bb6acf": {
+      "type": "text-image",
+      "settings": {
+        "image_align": "left",
+        "image_ratio": "ratio-2-3",
+        "hero_image": "shopify:\/\/shop_images\/WHOLESALE.jpg",
+        "title": "About us",
+        "body": "<p>If it makes you happy, if can’t be that baa-a-aad - but this right here, ain’t bad at all.<br\/><br\/>No guilt when eating pure açai, which has zero sugar and full of nourishing antioxidants, omega fatty acids and fibre to fuel your day.<\/p>",
+        "cta_link": "shopify:\/\/pages\/contact",
+        "cta_text": "Find out more"
+      }
+    },
+    "163000512401893d4b": {
+      "type": "featured-products",
+      "blocks": {
+        "797baddf-e0ea-4f17-b072-b3e338057193": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        },
+        "750037a9-8ff2-4e47-b150-ac6b9907be76": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        },
+        "a37f25f4-0a24-472a-9811-a3c58df1b8c5": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        }
+      },
+      "block_order": [
+        "797baddf-e0ea-4f17-b072-b3e338057193",
+        "750037a9-8ff2-4e47-b150-ac6b9907be76",
+        "a37f25f4-0a24-472a-9811-a3c58df1b8c5"
+      ],
+      "settings": {
+        "title": "",
+        "cta_link": "",
+        "cta_text": ""
+      }
+    },
+    "1630005117465d18aa": {
+      "type": "text-image",
+      "settings": {
+        "image_align": "right",
+        "image_ratio": "ratio-2-3",
+        "hero_image": "shopify:\/\/shop_images\/acai.jpg",
+        "title": "We Love Acai",
+        "body": "<p>If it makes you happy, if can’t be that baa-a-aad - but this right here, ain’t bad at all.<br\/><br\/>No guilt when eating pure açai, which has zero sugar and full of nourishing antioxidants, omega fatty acids and fibre to fuel your day.<\/p>",
+        "cta_link": "shopify:\/\/pages\/contact",
+        "cta_text": "See why"
+      }
+    },
+    "1630005127f6dc8026": {
+      "type": "text-image",
+      "settings": {
+        "image_align": "left",
+        "image_ratio": "ratio-3-2",
+        "hero_image": "shopify:\/\/shop_images\/hat.jpg",
+        "title": "Collaborate",
+        "body": "<p>We love working with likeminded people. If you are interested in collaborating with Boa Vida Acai - please reach out.<\/p>",
+        "cta_link": "shopify:\/\/pages\/contact",
+        "cta_text": "Get in touch"
+      }
     }
   },
   "order": [
-    "intro"
+    "intro",
+    "163000506352617cd9",
+    "163000506855bb6acf",
+    "163000512401893d4b",
+    "1630005117465d18aa",
+    "1630005127f6dc8026"
   ]
 }
