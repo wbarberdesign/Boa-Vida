@@ -9,6 +9,7 @@
 @import '_fontFace.scss';
 @import '_text.scss';
 @import '_swiper.scss';
+@import '_swiperCustom.scss';
 @import '_goCart.scss';
 
 .splash-screen {
@@ -57,7 +58,7 @@ header {
 }
 
 section {
-    padding-top: 15rem;
+    padding-bottom: 15rem;
     &.no-pad {
         padding-top: 0;
     }
@@ -77,13 +78,102 @@ img {
     object-fit: cover;
 }
 
+.image-container {
+    &.image-bleed-to-left {
+        margin-left: -#{$siteMargin};
+        width: calc(100% + #{$siteMargin});
+        // Bleeds full screen on mobile
+        @include mobileOnly {
+            margin: 0 -2rem;
+            width: calc(100% + 2rem + 2rem);
+        }
+    }
+    &.image-bleed-to-right {
+        margin-right: -#{$siteMargin};
+        width: calc(100% + #{$siteMargin});
+        @include mobileOnly {
+            margin: 0 -2rem;
+            width: calc(100% + 2rem + 2rem);
+        }
+    }
+    &.image-bleed-full {
+        margin: 0 -#{$siteMargin};
+        width: calc(100% + #{$siteMargin} + #{$siteMargin});
+        @include mobileOnly {
+            margin: 0 -2rem;
+            width: calc(100% + 2rem + 2rem);
+        }
+    }
+    &.contain {
+        img {
+            object-fit: contain;
+        }
+    }
+}
+
 video {
     width: 100%;
     height: 100%;
+}
+
+button {
+    padding: 1.5rem 4rem;
+    border-radius: 4rem;
+    border: none;
+    cursor: pointer;
+    &.primary {
+        background-color: $themeBlack;
+        color: $themeWhite;
+    }
+    &.secondary {
+        background-color: $themeWhite;
+        color: $themeBlack;
+    }
+    * {
+        pointer-events: none;
+    }
 }
 
 .grid--single {
     display: grid;
     grid-template-columns: 100%;
     height: 100%;
+}
+
+.collection--product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    cursor: pointer;
+    &.card--product {
+        .card--product-inner-grid {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr;
+            .image-container, .card--hover-overlay {
+                grid-row: 1;
+                grid-column: 1;
+            }
+            .card--hover-overlay {
+                z-index: 3;
+                opacity: 0;
+                background: rgba(0,0,0,0.4);
+                @include transition(.2s all);
+                p {
+                    @include translateY(10px);
+                    @include transition(transform .2s ease-in-out)
+                }
+            }
+            &:hover {
+                .card--hover-overlay {
+                    opacity: 1;
+                    p {
+                        @include translateY(0);
+                    }
+                }
+            }
+        }
+    }
 }

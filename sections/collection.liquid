@@ -1,0 +1,52 @@
+{% paginate collection.products by 5 %}
+    <section class="offset-top-large" data-section-id="collection" data-collection="{{ collection.handle }}">
+        <div class="gc">
+            <div class="d-1-13 text-center">
+                <h1>{{ collection.title }}</h1>
+            </div>
+            <div class="d-1-4 filters">
+                <nav>
+                    <h3>Filters</h3>
+                    <ul>
+                        {% if section.blocks.size > 0 %}
+                            {% for block in section.blocks %}
+                                <li><a href="{{ block.settings.collection_filter.url }}">{{ block.settings.collection_filter.title }}</a></li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+            <div class="d-4-13 collection--product-grid">
+                {% if collection.products_count > 0 %}
+                    {% for product in collection.products %}
+                        {% include 'card--product',
+                            product: product
+                        %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    {% include 'accessible-pagination' %}
+{% endpaginate %}
+
+{% schema %}
+{
+    "settings": [
+        
+    ],
+    "blocks": [ 
+        {
+            "name": "Collection FIlter",
+            "type": "Navigation",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection_filter",
+                    "label": "Collection Filter"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

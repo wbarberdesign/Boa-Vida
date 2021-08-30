@@ -26,8 +26,8 @@
                         </ul>
                     </nav>
                 </div>
-
-                <a href="/cart">cart</a>
+                
+                {% include 'go-cart-button' %}
 
                 {% if shop.customer_accounts_enabled %}
                     {% if customer %}

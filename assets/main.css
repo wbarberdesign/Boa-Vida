@@ -4217,7 +4217,8 @@ h5,
 .bold,
 b,
 strong,
-blockquote {
+blockquote,
+button {
   font-family: "Sofia-Bold";
 }
 
@@ -4236,12 +4237,28 @@ h2, .h2 {
   }
 }
 
+p {
+  line-height: 150%;
+}
+
+button,
+h5, .h5 {
+  font-size: 1.8rem;
+}
+
 blockquote {
   font-size: 3.6rem;
 }
 
 .text-center {
   text-align: center;
+}
+
+.text-block {
+  margin: 1.6rem 0;
+}
+.text-block h1, .text-block h2, .text-block h3, .text-block h4, .text-block h5, .text-block ul, .text-block p, .text-block b {
+  margin-bottom: 1em;
 }
 
 /**
@@ -4823,6 +4840,34 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
 }
 
+.product--carousel {
+  height: 100%;
+}
+.product--carousel .swiper-button {
+  bottom: 0;
+  top: unset;
+}
+.product--carousel .swiper-button:after {
+  display: none;
+}
+.product--carousel .swiper-button svg {
+  width: 3rem;
+}
+.product--carousel .swiper-button.swiper-button-next svg {
+  transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.product--carousel .swiper-pagination-bullets .swiper-pagination-bullet {
+  opacity: 1;
+  border: 1px solid #101010;
+  background: transparent;
+}
+.product--carousel .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #101010;
+}
+
 /*!
  * 
  *   @bornfight/gocart v1.0.9
@@ -5221,7 +5266,7 @@ header .logo {
 }
 
 section {
-  padding-top: 15rem;
+  padding-bottom: 15rem;
 }
 section.no-pad {
   padding-top: 0;
@@ -5242,13 +5287,113 @@ img {
   object-fit: cover;
 }
 
+.image-container.image-bleed-to-left {
+  margin-left: -6rem;
+  width: calc(100% + 6rem);
+}
+@media (max-width: 750px) {
+  .image-container.image-bleed-to-left {
+    margin: 0 -2rem;
+    width: calc(100% + 2rem + 2rem);
+  }
+}
+.image-container.image-bleed-to-right {
+  margin-right: -6rem;
+  width: calc(100% + 6rem);
+}
+@media (max-width: 750px) {
+  .image-container.image-bleed-to-right {
+    margin: 0 -2rem;
+    width: calc(100% + 2rem + 2rem);
+  }
+}
+.image-container.image-bleed-full {
+  margin: 0 -6rem;
+  width: calc(100% + 6rem + 6rem);
+}
+@media (max-width: 750px) {
+  .image-container.image-bleed-full {
+    margin: 0 -2rem;
+    width: calc(100% + 2rem + 2rem);
+  }
+}
+.image-container.contain img {
+  object-fit: contain;
+}
+
 video {
   width: 100%;
   height: 100%;
+}
+
+button {
+  padding: 1.5rem 4rem;
+  border-radius: 4rem;
+  border: none;
+  cursor: pointer;
+}
+button.primary {
+  background-color: #000;
+  color: #FFF;
+}
+button.secondary {
+  background-color: #FFF;
+  color: #000;
+}
+button * {
+  pointer-events: none;
 }
 
 .grid--single {
   display: grid;
   grid-template-columns: 100%;
   height: 100%;
+}
+
+.collection--product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  cursor: pointer;
+}
+.card.card--product .card--product-inner-grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+.card.card--product .card--product-inner-grid .image-container, .card.card--product .card--product-inner-grid .card--hover-overlay {
+  grid-row: 1;
+  grid-column: 1;
+}
+.card.card--product .card--product-inner-grid .card--hover-overlay {
+  z-index: 3;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
+  transition: 0.2s all;
+}
+.card.card--product .card--product-inner-grid .card--hover-overlay p {
+  transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  -webkit-transition: transform 0.2s ease-in-out;
+  -moz-transition: transform 0.2s ease-in-out;
+  -ms-transition: transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+.card.card--product .card--product-inner-grid:hover .card--hover-overlay {
+  opacity: 1;
+}
+.card.card--product .card--product-inner-grid:hover .card--hover-overlay p {
+  transform: translateY(0);
+  -moz-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -o-transform: translateY(0);
 }

@@ -1,0 +1,127 @@
+{% assign gridText = 'd-7-11' %}
+{% assign gridImage = 'd-2-6' %}
+{% assign imageRatio = 'ratio-2-3' %}
+{% assign imageBleed = '' %}
+
+{% if section.settings.image_align == 'right' %}
+    {% assign gridText = 'd-2-6' %}
+    {% assign gridImage = 'd-7-11' %}
+{% endif %}
+
+{% if section.settings.image_ratio %}
+    {% assign imageRatio = section.settings.image_ratio %}
+    {% if imageRatio == 'ratio-3-2' and gridText == 'd-2-6' %}
+        {% assign gridImage = 'd-6-13' %}
+        {% assign gridText = 'd-1-5' %}
+        {% assign imageBleed = 'to-right' %}
+    {% endif %}
+    {% if imageRatio == 'ratio-3-2' and gridText == 'd-7-11' %}
+        {% assign gridImage = 'd-1-8' %}
+        {% assign gridText = 'd-9-13' %}
+        {% assign imageBleed = 'to-left' %}
+    {% endif %}
+{% endif %}
+
+<section>
+    <div class="gc">
+        <div class="{{ gridImage }} r-1 m-1-13">
+            {% if section.settings.hero_image %}
+                {% include 'image',
+                    imageFile: section.settings.hero_image,
+                    userSetAspectRatio: imageRatio,
+                    userSetImageBleed: imageBleed
+                %}
+            {% endif %}
+        </div>
+        <div class="{{ gridText }} r-1 m-1-13 m-r-2 flex flex-center flex-column">
+            {% if section.settings.title %}
+                {% include 'heading' 
+                    text: section.settings.title
+                %}
+            {% endif %}
+            <div class="rte">
+                {{ section.settings.body | markdown }}
+            </div>
+            {% if section.settings.cta_link %}
+                {% include 'button',
+                    url: section.settings.cta_link,
+                    text: section.settings.cta_text,
+                    type: 'primary'
+                %}
+            {% endif %}
+        </div>
+
+    </div>
+</section>
+
+{% schema %}
+{
+    "settings": [
+        {
+            "type": "select",
+            "id": "image_align",
+            "label": "Align Image",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "image_ratio",
+            "label": "Image Orientation",
+            "options": [
+                {
+                    "value": "ratio-3-2",
+                    "label": "Landscape"
+                },
+                {
+                    "value": "ratio-2-3",
+                    "label": "Portrait"
+                },
+                {
+                    "value": "ratio-1-1",
+                    "label": "Square"
+                }
+            ]
+        },
+        {
+            "type": "image_picker",
+            "id": "hero_image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "body",
+            "label": "Body"
+        },
+        {
+            "type": "url",
+            "id": "cta_link",
+            "label": "Button Link"
+        },
+        {
+            "type": "text",
+            "id": "cta_text",
+            "label": "Button Text"
+        }
+    ],
+    "presets": [
+        {
+            "category": "Home",
+            "name":"Text & Image"
+        }
+    ]
+}
+{% endschema %}

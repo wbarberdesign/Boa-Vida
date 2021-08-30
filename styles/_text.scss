@@ -11,7 +11,8 @@ h5,
 .bold, 
 b, 
 strong ,
-blockquote{
+blockquote,
+button {
     font-family: 'Sofia-Bold';
 }
 
@@ -28,10 +29,26 @@ h2, .h2 {
     }
 }
 
+p {
+    line-height: 150%;
+}
+
+button,
+h5, .h5 {
+    font-size: 1.8rem;
+}
+
 blockquote {
     font-size: 3.6rem;
 }
 
 .text-center {
     text-align: center;
+}
+
+.text-block {
+    margin: 1.6rem 0;
+    h1,h2,h3,h4,h5,ul,p,b {
+        margin-bottom: 1em;
+    }
 }

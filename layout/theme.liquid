@@ -18,5 +18,9 @@
   <main role="main">
     {{ content_for_layout }}
   </main>
+  {%- section 'go-cart' -%}
+  <script>
+    var goCart = new GoCart();
+  </script>
 </body>
 </html>

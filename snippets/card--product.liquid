@@ -1,0 +1,17 @@
+<article class="card card--product">
+    <a href="{{ product.url }}">
+        <div class="card--product-inner-grid">
+            <div class="card--hover-overlay flex flex-center flex-middle">
+                <p class="bold white medium">View Product</p>
+            </div>
+            {% include 'image',
+                imageFile: product.featured_image,
+                userSetAspectRatio: 'ratio-1-1'
+            %}
+        </div>
+        <div class="card--product-meta text-block text-center">
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.price | money_with_currency }}</p>
+        </div>
+    </a>
+</article>

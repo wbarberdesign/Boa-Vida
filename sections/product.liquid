@@ -1,0 +1,118 @@
+<section data-section-id="product" data-product-id="{{ product.handle }}">
+    <div class="gc">
+        <div class="d-1-6 m-1-13">
+            <div class="swiper-container product--carousel image-container image-bleed-to-left">
+                <div class="swiper-wrapper">
+                    {% if product.metafields.product.main_image %}
+                        <div class="swiper-slide">
+                            {% include 'product-main-image' %}
+                        </div>
+                    {% endif %}
+                {% for image in product.images %}
+                    <div class="swiper-slide">
+                    {% include 'image', 
+                        imageFile: image,
+                        userSetAspectRatio: 'ratio-2-3',
+                        userSetImageFit: 'contain',
+                        userSetImageFit
+                    %}
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button swiper-button-prev">
+                {% include 'icon-arrow' %}
+                </div>
+                <div class="swiper-button swiper-button-next">
+                {% include 'icon-arrow' %}
+                </div>
+            </div>
+        </div>
+        <div class="d-7-11 offset-top-medium">
+            <div class="product--meta text-block">
+                <h1>{{ product.title }}</h1>
+                <p>{{ product.price | money_with_currency }}</p>
+                <form action="/cart/add" method="post" enctype="multipart/form-data"  
+                id="add-to-cart-{{ product.handle }}-{{ collection.handle }}-{{ section.id }}">
+                {% if product.variants.size > 0 %}
+                <ul class="options options-grid">
+                <label class="options-group-label">{{ product.options.first }}</label>  
+                <div class="flex flex-r options-group">
+                    {% for variant in product.variants %}
+                        <div>
+                            <input 
+                            type="radio" 
+                            name="id" 
+                            data-variant-option
+                            id="{{ variant.id }}"
+                            value="{{ variant.id }}" 
+                            {% if variant.selected %}checked{% endif %}
+                            class="option {% if variant.available == false%}sold-out{% endif %}"
+                            {% if variant.available == false%}disabled{% endif %}>
+                            <label for="{{ variant.id }}">{{ variant.title }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+                </ul>
+            {% endif %}
+                    <div class="visually-hidden">
+                        <label for="Quantity">quantity</label>
+                        <input type="number" id="Quantity" name="quantity" value="1" min="1">
+                    </div>
+        
+                    <button  
+                    type="button"
+                    name="add" 
+                    data-add-to-cart 
+                    class="js-go-cart-add-to-cart primary"
+                    {%- unless current_variant.available -%}disabled="disabled"{%- endunless -%}> 
+                        <span data-add-to-cart-text> 
+                            {%- if current_variant.available -%} 
+                                ADD TO CART
+                            {%- else -%} 
+                                SOLD OUT
+                            {%- endif -%} 
+                        </span>
+                    </button> 
+                </form>
+                <div class="rte text-block">
+                    {{ product.content | markdown }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if product.metafields.custom.quote %}
+    {% include 'product--quote' %}
+{% endif %}
+
+<script>
+    const addToCartButtonText=document.querySelector('span[data-add-to-cart-text]');
+    const addToCartButton=document.querySelector('button[data-add-to-cart]');
+    const preselectedVariant=document.querySelectorAll('input[name="id"]:checked');
+    const variantOptions=document.querySelectorAll('input[name="id"]');
+
+    // ON MANUAL VARIANT SELECT
+    var prev = null;
+    for (var i = 0; i < variantOptions.length; i++) {
+        variantOptions[i].addEventListener('change', function() {
+            if (this !== prev) {
+                prev = this;
+                addToCartButtonText.innerHTML='Add to cart';
+                addToCartButton.classList.remove('disabled');
+                addToCartButton.removeAttribute('disabled');
+            }
+        });
+    }
+    
+    // PRESELECTED VARIANT FROM COLLECTION PAGE
+    if(preselectedVariant.length > 0) {
+        addToCartButtonText.innerHTML='Add to cart';
+        addToCartButton.classList.remove('disabled');
+    } else {
+        addToCartButtonText.innerHTML='Select an Option';
+        addToCartButton.classList.add('disabled');
+    }
+
+</script>
