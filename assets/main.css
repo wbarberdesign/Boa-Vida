@@ -4256,6 +4256,7 @@ p {
 }
 
 blockquote,
+summary,
 h3, .h3 {
   font-size: 3.6rem;
 }
@@ -5467,6 +5468,47 @@ button.text-link.next:after {
   content: " →";
   margin-left: 5px;
   display: inline-block;
+}
+
+details .text-block {
+  max-height: 0;
+  overflow-y: hidden;
+  -webkit-transition: 0.3s all;
+  -moz-transition: 0.3s all;
+  -ms-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
+}
+details summary {
+  border-bottom: 3px solid #000;
+  padding-bottom: 2rem;
+  position: relative;
+}
+details summary:after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-family: "Sofia-Bold";
+}
+details summary:hover {
+  cursor: pointer;
+}
+details[open] summary {
+  border-bottom: none;
+}
+details[open] summary:after {
+  content: "-";
+}
+details[open] .text-block {
+  max-height: 100%;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
 }
 
 .grid--single {

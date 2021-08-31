@@ -1,0 +1,12 @@
+<section data-section-id="product-dropdowns">
+    <div class="gc">
+        <div class="d-4-10">
+            {% if product.metafields.custom.whereToBuy %}
+                <details>
+                    <summary>Where to buy</summary>
+                    <div class="text-block">{{ product.metafields.custom.whereToBuy | markdown }}</div>
+                </details>
+            {% endif %}
+        </div>
+    </div>
+</section>

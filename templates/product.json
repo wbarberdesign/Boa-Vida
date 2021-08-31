@@ -3,12 +3,16 @@
         "main": {
             "type": "product"
         },
+        "dropdowns": {
+            "type": "product--dropdowns"
+        },
         "recomendations": {
             "type": "product-recomendations"
         }
     },
     "order": [
         "main",
+        "dropdowns",
         "recomendations"
     ]
 }

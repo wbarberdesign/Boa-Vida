@@ -210,6 +210,46 @@ button {
     }
 }
 
+details {
+    .text-block {
+        max-height: 0;
+        overflow-y: hidden;
+        @include transition(.3s all);
+    }
+    summary {
+        border-bottom: 3px solid $themeBlack;
+        padding-bottom: 2rem;
+        position: relative;
+        &:after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            font-family: 'Sofia-Bold';
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &[open] {
+        summary {
+            border-bottom: none;
+            &:after {
+                content: '-';
+            }
+        }
+        .text-block {
+            max-height: 100%;
+        }
+    }
+}
+
+details > summary {
+    list-style: none;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
 .grid--single {
     display: grid;
     grid-template-columns: 100%;

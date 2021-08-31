@@ -7,21 +7,37 @@
 >
   {%- if recommendations.performed and recommendations.products_count > 0 -%}
   <div class="gc">
-    <div class="d-1-4 m-1-13 max-width-350">
+    <div class="d-1-4 t-1-7 r-1-3 t-r-1">
       {% if section.settings.recommended_products_title != blank %}
         {% include 'heading', text: section.settings.recommended_products_title %}
       {% endif %}
     </div>
+    <div class="d-7-13 flex flex-to-right">
+        {% if section.settings.cta_link %}
+            {% include 'button',
+                url: section.settings.cta_link,
+                text: section.settings.cta_text,
+                type: 'text-link next'
+            %}
+        {% endif %}
+    </div>
     {% for product in recommendations.products %}
       {% if forloop.index <= section.settings.recommended_products_count %}
-        {% include 'product-card', 
-          product: product,
-          context: section.id 
-        %}
+        <div class="span-3 t-span-4 m-span-6">
+          {% include 'card',
+              context: 'product',
+              imageFile: product.featured_image,
+              userSetAspectRatio: 'ratio-1-1',
+              title: product.title,
+              subtitle: product.first_available_variant.title,
+              cta_url: product.url,
+              cta_text: 'SHOP NOW'
+          %}
+        </div>
       {% endif %}
     {% endfor %}
   </div>
-  {%- endif -%}
+{%- endif -%}
 </section>
 
 {% javascript %}
@@ -67,6 +83,16 @@
         "id": "recommended_products_title",
         "label": "Title",
         "default": "Other Products we think you might like"
+      },
+      {
+        "type": "url",
+        "id": "cta_link",
+        "label": "Button Link"
+      },
+      {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text"
       },
       {
         "type": "range",
