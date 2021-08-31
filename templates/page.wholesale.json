@@ -16,10 +16,44 @@
         "cta_link": "",
         "cta_text": ""
       }
+    },
+    "16304443916fc0d7c6": {
+      "type": "featured-products",
+      "blocks": {
+        "19eff56b-959f-41fa-9063-203df6d84c93": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        },
+        "092fa1a2-4876-4c92-972e-e830dafdc2ad": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        },
+        "e983da29-5e28-4cfd-9d14-3c729a658793": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        }
+      },
+      "block_order": [
+        "19eff56b-959f-41fa-9063-203df6d84c93",
+        "092fa1a2-4876-4c92-972e-e830dafdc2ad",
+        "e983da29-5e28-4cfd-9d14-3c729a658793"
+      ],
+      "settings": {
+        "title": "Wholesale Products",
+        "cta_link": "shopify:\/\/collections\/all",
+        "cta_text": "Shop Wholesale"
+      }
     }
   },
   "order": [
     "main",
-    "16304443875181ecc8"
+    "16304443875181ecc8",
+    "16304443916fc0d7c6"
   ]
 }
