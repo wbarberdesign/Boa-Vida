@@ -216,10 +216,10 @@
                 redirect: 'follow'
             };
 
-        fetch(`https://barber.codes/media/boa-via/email-helper.php?name=${x.get('full-name')}&mobile=${x.get('mobile')}&email=${x.get('email')}`, requestOptions)
-        .then(response => response.text())
-        .then(result => console.log('Mail sent successfully.'))
-        .catch(error => console.log('error', error));
+            fetch(`https://barber.codes/media/boa-vida/email-helper.php?name=${x.get('full-name')}&mobile=${x.get('mobile')}&email=${x.get('email')}`, requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
         }
     });
 </script>
