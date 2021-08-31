@@ -7,9 +7,9 @@
                 </video>
             {% endif %}
         </div>
-        <div class="d-4-10 r-1 flex flex-middle flex-center flex-column text-center" style="z-index: 2;">
+        <div class="d-4-10 r-1 flex flex-middle flex-center flex-column text-center text-block" style="z-index: 2;">
             {% if section.settings.hero_statement %}
-                <blockquote class="white">{{ section.settings.hero_statement | markdown }}</blockquote>
+                <blockquote class="white">{{ section.settings.hero_statement | strip_html }}</blockquote>
             {% endif %}
             <div class="flex-r">
                 {% if section.settings.cta_one_link %}
