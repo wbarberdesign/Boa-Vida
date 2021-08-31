@@ -10,12 +10,22 @@
         %}
 {%- endcomment -%}
 
-<article class="card {{ context }}">
+<a href="{{cta_url}}" class="card {{ context }}">
     {% include 'image',
         imageFile: imageFile,
         userSetAspectRatio: userSetAspectRatio
     %}
-    <div class="text-block flex flex-s-between m-flex-column">
+    {% if context == 'product' %}
+        {% if product.metafields.custom.hover_image %}
+            <div class="card--hover-image">
+                {% include 'image',
+                    imageFile: product.metafields.custom.hover_image,
+                    userSetAspectRatio: userSetAspectRatio
+                %}
+            </div>
+        {% endif %}
+    {% endif %}
+    <div class="text-block text-block--no-spacing flex flex-s-between m-flex-column">
         <div class="card--text">
             <h4>{{ title }}</h4>
             {% if subtitle %}
@@ -24,10 +34,9 @@
         </div>
         <div class="card--cta">
             {% include 'button',
-                url: cta_url,
                 text: cta_text,
                 type: 'primary'
             %}
         </div>
     </div>
-</article>
+</a>

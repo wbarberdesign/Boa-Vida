@@ -37,9 +37,13 @@ p {
     line-height: 150%;
 }
 
-button,
 h5, .h5 {
     font-size: 1.8rem;
+}
+
+button,
+p {
+    font-size: 1.6rem;
 }
 
 blockquote,
@@ -60,5 +64,10 @@ h4, .h4 {
     h1,h2,h3,h4,h5,ul,p,b {
         margin-bottom: 1.6rem;
         // margin-bottom: 1em;
+    }
+    &.text-block--no-spacing {
+        h1,h2,h3,h4,h5,ul,p,b {
+            margin-bottom: 0;
+        }
     }
 }
