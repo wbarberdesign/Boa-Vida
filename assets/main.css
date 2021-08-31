@@ -5292,6 +5292,7 @@ header {
   width: 100%;
   top: 0;
   z-index: 10;
+  box-shadow: 0px 4px 8px #00000031;
 }
 header .logo {
   position: absolute;
@@ -5299,6 +5300,7 @@ header .logo {
   background: #FFF;
   border-radius: 100px;
   padding: 1rem;
+  box-shadow: 0px 4px 8px #00000031;
 }
 header .navigation ul li:not(last-child) {
   margin-right: 1.6rem;
@@ -5318,7 +5320,7 @@ header .cart-icon-container {
   position: relative;
 }
 header .cart-icon-container .js-go-cart-counter {
-  top: 14px;
+  top: 11px;
   left: 0;
   width: 100%;
   font-size: 12px;
@@ -5339,7 +5341,7 @@ header .search-form.show {
 }
 header .header--banner-message {
   background: #000;
-  padding: 1rem;
+  padding: 0.1rem;
 }
 header .header--banner-message * {
   font-size: 12px;
@@ -5438,10 +5440,10 @@ button {
   cursor: pointer;
 }
 button.primary {
-  background: -webkit-linear-gradient(top left, #000 50%, #3C0C5A 50%);
-  background: -moz-linear-gradient(top left, #000 50%, #3C0C5A 50%);
-  background: -o-linear-gradient(top left, #000 50%, #3C0C5A 50%);
-  background: linear-gradient(top left, #000 50%, #3C0C5A 50%);
+  background: -webkit-linear-gradient(top left, #000 50%, #3C0C5A 50%, #2e082e 100%);
+  background: -moz-linear-gradient(top left, #000 50%, #3C0C5A 50%, #2e082e 100%);
+  background: -o-linear-gradient(top left, #000 50%, #3C0C5A 50%, #2e082e 100%);
+  background: linear-gradient(top left, #000 50%, #3C0C5A 50%, #2e082e 100%);
   background-position: top left;
   background-size: 210%;
   transition: 0.3s all ease-in-out;
