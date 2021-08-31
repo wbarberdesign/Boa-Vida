@@ -4449,7 +4449,7 @@ blockquote {
 }
 
 .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-  left: 10px;
+  left: 3rem;
   right: auto;
 }
 
@@ -5253,6 +5253,11 @@ button.swiper-pagination-bullet {
 main {
   margin: 0 4rem;
 }
+@media (max-width: 750px) {
+  main {
+    margin: 0 2rem;
+  }
+}
 
 header {
   background: #FFF;
@@ -5273,6 +5278,7 @@ header .navigation ul li:not(last-child) {
   margin-right: 1.6rem;
 }
 header .navigation ul li a {
+  font-family: "Sofia-Bold";
   -webkit-transition: 0.2s all;
   -moz-transition: 0.2s all;
   -ms-transition: 0.2s all;
@@ -5282,9 +5288,41 @@ header .navigation ul li a {
 header .navigation ul li a.page-active, header .navigation ul li a:hover {
   color: #3C0C5A;
 }
+header .cart-icon-container {
+  position: relative;
+}
+header .cart-icon-container .js-go-cart-counter {
+  top: 14px;
+  left: 0;
+  width: 100%;
+  font-size: 12px;
+  position: absolute;
+  text-align: center;
+}
+header .search-form {
+  max-width: 0;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  transition: 0.5s all;
+}
+header .search-form.show {
+  max-width: 100%;
+}
+
+.shopify-challenge__container {
+  padding-top: 225px;
+}
 
 section {
   padding-bottom: 15rem;
+}
+@media (max-width: 750px) {
+  section {
+    padding-bottom: 4rem;
+  }
 }
 section.no-pad {
   padding-top: 0;
@@ -5292,6 +5330,12 @@ section.no-pad {
 section.full-width {
   margin-left: -4rem;
   margin-right: -4rem;
+}
+@media (max-width: 750px) {
+  section.full-width {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
 }
 
 a {
@@ -5356,6 +5400,7 @@ button {
   padding: 1.5rem 2rem;
   border-radius: 4rem;
   border: none;
+  background: transparent;
   cursor: pointer;
 }
 button.primary {
@@ -5450,6 +5495,17 @@ button.text-link.next:after {
   -o-transform: translateY(0);
 }
 
+@media (max-width: 750px) {
+  .home-intro video {
+    height: 80vh;
+    object-fit: cover;
+  }
+}
+
+.wholesale-form .flex-r {
+  flex-wrap: wrap;
+}
+
 input {
   padding: 1rem 2rem;
   border: 1px solid #E6E6E6;
@@ -5466,6 +5522,7 @@ label {
   width: 100px;
   height: 100px;
   margin-right: 20px;
+  margin-bottom: 20px;
   background: #E6E6E6;
   border-radius: 4px;
   text-align: center;

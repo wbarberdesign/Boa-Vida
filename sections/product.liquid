@@ -12,9 +12,8 @@
                     <div class="swiper-slide">
                     {% include 'image', 
                         imageFile: image,
-                        userSetAspectRatio: 'ratio-2-3',
-                        userSetImageFit: 'contain',
-                        userSetImageFit
+                        userSetAspectRatio: 'ratio-1-1',
+                        userSetImageFit: 'cover'
                     %}
                     </div>
                 {% endfor %}
@@ -75,7 +74,7 @@
                         </span>
                     </button> 
                 </form>
-                <div class="rte text-block">
+                <div class="rte text-block grey">
                     {{ product.content | markdown }}
                 </div>
             </div>

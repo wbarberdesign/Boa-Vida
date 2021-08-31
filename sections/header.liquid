@@ -9,9 +9,9 @@
         </div>
         <div class="d-6-13 r-1">
             <div class="flex flex-s-between">
-                <div class="navigation">
-                    <nav>
-                        <ul class="flex flex-r">
+                <div class="navigation flex flex-center">
+                    <nav class="flex flex-center">
+                        <ul class="flex flex-middle flex-r">
                             {% for link in linklists.main-menu.links %}
                                 {% assign child_list_handle = link.title | handleize %}
                                 {% if linklists[child_list_handle].links != blank %}
@@ -27,17 +27,21 @@
                     </nav>
                 </div>
                 
-                {% include 'go-cart-button' %}
-
-                {% if shop.customer_accounts_enabled %}
-                    {% if customer %}
-                        <a href="/account">account</a>
-                        {{ 'log out'  | customer_logout_link }}
-                    {% else %}
-                        {{ 'log in ' | customer_login_link }}
-                        {{ 'register' | customer_register_link }}
-                    {% endif %}
-                {% endif %}
+                <div class="navigation">
+                    <ul class="flex flex-middle flex-r">
+                        <li>{% include 'search' %}</li>
+                        <li>{% include 'go-cart-button' %}</li>
+                        {% if shop.customer_accounts_enabled %}
+                            {% if customer %}
+                                <li><a href="/account">Account</a></li>
+                                <li>{{ 'Log Out'  | customer_logout_link }}</li>
+                            {% else %}
+                                <li>{{ 'Log In ' | customer_login_link }}</li>
+                                <li>{{ 'Sign Up' | customer_register_link }}</li>
+                            {% endif %}
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

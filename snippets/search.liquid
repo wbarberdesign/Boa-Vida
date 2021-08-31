@@ -1,0 +1,20 @@
+<div class="search-container flex flex-r">
+    <button data-toggle-search>
+        <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.551 14.2245L18.8265 20.5" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8.36735" cy="8.36735" r="6.86735" stroke="black" stroke-width="3"/>
+        </svg>
+    </button>
+    <div class="search-form">
+        <form action="{{ routes.search_url }}">
+            <div class="flex flex-r">
+                <input type="text"
+                placeholder="Search"
+                name="q"
+                value="{{ search.terms | escape }}">
+                <button type="submit" class="btn primary">Go</button>
+            </div>
+        </form>
+    </div>
+</div>
+    

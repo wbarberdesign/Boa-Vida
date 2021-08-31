@@ -1,9 +1,14 @@
 <!--cart button-->
 <div class="go-cart__trigger js-go-cart-trigger bold" style="z-index: 3;">
 
-    CART
-
-    <span class="js-go-cart-counter">{{- cart.item_count -}}</span>
+    <div class="cart-icon-container">
+        <svg width="25" height="30" viewBox="0 0 25 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" y="9.5" width="22" height="19" stroke="black" stroke-width="3" stroke-linejoin="round"/>
+            <rect x="-1.5" y="1.5" width="12" height="8" transform="matrix(1 0 0 -1 8 11)" stroke="black" stroke-width="3" stroke-linejoin="round"/>
+        </svg>
+    
+        <span class="js-go-cart-counter">{{- cart.item_count -}}</span>
+    </div>
 
     <!--go cart mini cart-->
     <div class="go-cart__mini-cart js-go-cart-mini-cart">
