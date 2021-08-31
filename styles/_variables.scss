@@ -17,7 +17,7 @@ $siteMargin: 6rem;
 // COLOUR VARIABLES
 $backgroundPrimary: #212121;
 $backgroundSecondary: #FFF;
-$themePurple: #a18dff;
+$themePurple: #3C0C5A;
 $themeLightPurple: #d2c8ff;
 $themeWhite: #FFF;
 $themeSand: #C2BBA9;
@@ -46,5 +46,6 @@ $fontSecondary: '';
 $fontThird: '';
 // BUTTONS
 $buttonBorder: 0px solid transparent;
+$buttonPrimaryGradient: $themeBlack 50%, $themePurple 50%; 
 // OTHER
 $borderRadius: 50px;

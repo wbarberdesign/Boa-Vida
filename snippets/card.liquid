@@ -12,9 +12,10 @@
 
 <article class="card {{ context }}">
     {% include 'image',
-        imageFile: imageFile
+        imageFile: imageFile,
+        userSetAspectRatio: userSetAspectRatio
     %}
-    <div class="flex flex-s-between">
+    <div class="text-block flex flex-s-between">
         <div class="card--text">
             <h4>{{ title }}</h4>
             {% if subtitle %}

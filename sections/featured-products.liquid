@@ -7,7 +7,8 @@
             {% if section.settings.cta_link %}
                 {% include 'button',
                     url: section.settings.cta_link,
-                    text: section.settings.cta_text
+                    text: section.settings.cta_text,
+                    type: 'text-link next'
                 %}
             {% endif %}
         </div>
@@ -19,6 +20,7 @@
                         {% include 'card',
                             context: 'product',
                             imageFile: product.featured_image,
+                            userSetAspectRatio: 'ratio-1-1',
                             title: product.title,
                             subtitle: product.first_available_variant.title,
                             cta_url: product.url,

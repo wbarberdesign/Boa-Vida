@@ -21,6 +21,10 @@ button {
     color: $themeWhite;
 }
 
+.grey {
+    color: $themeGrey;
+}
+
 h1, .h1,
 h2, .h2 {
     font-size: 4.8rem;
@@ -49,6 +53,7 @@ blockquote {
 .text-block {
     margin: 1.6rem 0;
     h1,h2,h3,h4,h5,ul,p,b {
-        margin-bottom: 1em;
+        margin-bottom: 1.6rem;
+        // margin-bottom: 1em;
     }
 }

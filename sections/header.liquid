@@ -7,21 +7,21 @@
                 </div>
             </a>
         </div>
-        <div class="d-3-13 r-1">
+        <div class="d-6-13 r-1">
             <div class="flex flex-s-between">
                 <div class="navigation">
                     <nav>
-                        <ul>
+                        <ul class="flex flex-r">
                             {% for link in linklists.main-menu.links %}
-                            {% assign child_list_handle = link.title | handleize %}
-                            {% if linklists[child_list_handle].links != blank %}
-                            <a href="{{ link.url }}">{{ link.title }}</a>
-                            [{% for childlink in linklists[child_list_handle].links %}
-                                <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-                            {% endfor %}]
-                            {% else %}
-                            <a href="{{ link.url }}">{{ link.title }}</a>
-                            {% endif %}
+                                {% assign child_list_handle = link.title | handleize %}
+                                {% if linklists[child_list_handle].links != blank %}
+                                <li><a {% if link.active %}class="bold page-active"{% endif %} href="{{ link.url }}">{{ link.title }}</a></li>
+                                [{% for childlink in linklists[child_list_handle].links %}
+                                    <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                                {% endfor %}]
+                                {% else %}
+                                <li><a {% if link.active %}class="bold page-active"{% endif %} href="{{ link.url }}">{{ link.title }}</a></li>
+                                {% endif %}
                             {% endfor %}
                         </ul>
                     </nav>

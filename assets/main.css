@@ -4227,6 +4227,10 @@ button {
   color: #FFF;
 }
 
+.grey {
+  color: #707070;
+}
+
 h1, .h1,
 h2, .h2 {
   font-size: 4.8rem;
@@ -4259,7 +4263,7 @@ blockquote {
   margin: 1.6rem 0;
 }
 .text-block h1, .text-block h2, .text-block h3, .text-block h4, .text-block h5, .text-block ul, .text-block p, .text-block b {
-  margin-bottom: 1em;
+  margin-bottom: 1.6rem;
 }
 
 /**
@@ -5265,6 +5269,9 @@ header .logo {
   border-radius: 100px;
   padding: 1rem;
 }
+header .navigation ul li:not(last-of-type) {
+  margin-right: 1.6rem;
+}
 
 section {
   padding-bottom: 15rem;
@@ -5292,8 +5299,8 @@ img {
   -o-transition: 0.2s all;
   transition: 0.2s all;
 }
-img .loading {
-  filter: blur(10px);
+img.loading {
+  filter: blur(5px);
 }
 
 .image-container.image-bleed-to-left {
@@ -5342,8 +5349,19 @@ button {
   cursor: pointer;
 }
 button.primary {
-  background-color: #000;
+  background: -webkit-linear-gradient(top left, #000 50%, #3C0C5A 50%);
+  background: -moz-linear-gradient(top left, #000 50%, #3C0C5A 50%);
+  background: -o-linear-gradient(top left, #000 50%, #3C0C5A 50%);
+  background: linear-gradient(top left, #000 50%, #3C0C5A 50%);
+  background-position: top left;
+  background-size: 210%;
+  transition: 0.3s all ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
   color: #FFF;
+}
+button.primary:hover {
+  background-position: bottom right;
 }
 button.secondary {
   background-color: #FFF;
@@ -5362,6 +5380,14 @@ button.text-link:before {
   margin-right: 5px;
   display: inline-block;
 }
+button.text-link.next:before {
+  content: "";
+}
+button.text-link.next:after {
+  content: " →";
+  margin-left: 5px;
+  display: inline-block;
+}
 
 .grid--single {
   display: grid;
@@ -5374,9 +5400,6 @@ button.text-link:before {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.card {
-  cursor: pointer;
-}
 .card.card--product .card--product-inner-grid {
   display: grid;
   grid-template-rows: 1fr;
@@ -5439,7 +5462,7 @@ label {
   font-weight: bold;
 }
 .wholesale-checkbox:checked + label {
-  background: black;
+  background: #3C0C5A;
   color: white;
 }
 

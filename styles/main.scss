@@ -55,6 +55,13 @@ header {
         border-radius: 100px;
         padding: 1rem;
     }
+    .navigation {
+        ul {
+            li:not(last-of-type) {
+                margin-right: 1.6rem;
+            }
+        }
+    }
 }
 
 section {
@@ -77,8 +84,8 @@ img {
     height: 100%;
     object-fit: cover;
     @include transition(.2s all);
-    .loading {
-        filter: blur(10px);
+    &.loading {
+        filter: blur(5px);
     }
 }
 
@@ -126,8 +133,11 @@ button {
     border: none;
     cursor: pointer;
     &.primary {
-        background-color: $themeBlack;
+        @include gradient(top left, $buttonPrimaryGradient);
         color: $themeWhite;
+        &:hover {
+            background-position: bottom right;
+        }
     }
     &.secondary {
         background-color: $themeWhite;
@@ -145,6 +155,14 @@ button {
             margin-right: 5px;
             display: inline-block;
         }
+        &.next {
+            &:before { content: ''; }
+            &:after {
+                content: ' →';
+                margin-left: 5px;
+                display: inline-block;
+            }
+        }
     }
 }
 
@@ -160,7 +178,6 @@ button {
 }
 
 .card {
-    cursor: pointer;
     &.card--product {
         .card--product-inner-grid {
             display: grid;
@@ -216,7 +233,7 @@ label {
     }
     &:checked {
         + label {
-            background: black;
+            background: $themePurple;
             color: white;
         }
     }
