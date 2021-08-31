@@ -8,6 +8,8 @@
     "recomendations": {
       "type": "product-recomendations",
       "settings": {
+        "recommended_products_title": "Related Products",
+        "recommended_products_count": 3
       }
     }
   },
