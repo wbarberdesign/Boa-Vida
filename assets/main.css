@@ -5269,8 +5269,18 @@ header .logo {
   border-radius: 100px;
   padding: 1rem;
 }
-header .navigation ul li:not(last-of-type) {
+header .navigation ul li:not(last-child) {
   margin-right: 1.6rem;
+}
+header .navigation ul li a {
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
+  transition: 0.2s all;
+}
+header .navigation ul li a.page-active, header .navigation ul li a:hover {
+  color: #3C0C5A;
 }
 
 section {
@@ -5466,18 +5476,44 @@ label {
   color: white;
 }
 
-.page {
+.page, .success-message {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;
-  -webkit-transition: 0s transform 0.5s, 0.2s opacity 0.1s;
-  -moz-transition: 0s transform 0.5s, 0.2s opacity 0.1s;
-  -ms-transition: 0s transform 0.5s, 0.2s opacity 0.1s;
-  -o-transition: 0s transform 0.5s, 0.2s opacity 0.1s;
-  transition: 0s transform 0.5s, 0.2s opacity 0.1s;
+  -webkit-transition: 0s position, 0.3s opacity 0.3s ease-in-out;
+  -moz-transition: 0s position, 0.3s opacity 0.3s ease-in-out;
+  -ms-transition: 0s position, 0.3s opacity 0.3s ease-in-out;
+  -o-transition: 0s position, 0.3s opacity 0.3s ease-in-out;
+  transition: 0s position, 0.3s opacity 0.3s ease-in-out;
 }
-.page.hide {
+.page.hide, .success-message.hide {
   position: fixed;
   opacity: 0;
   top: 100vh;
+}
+.page .text-link, .success-message .text-link {
+  width: fit-content;
+}
+
+.progress-indicator {
+  background: #E6E6E6;
+  height: 10px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+.progress-indicator:before {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
+  transition: 0.2s all;
+  width: calc(var(--current-page) * 12.5%);
+  background: #3C0C5A;
 }

@@ -8,6 +8,7 @@
         </div>
         <div class="form d-4-10">
             <form id="wholesale-form">
+                <div class="progress-indicator text-center" style="--current-page: 0;"></div>
                 <div class="pages">
                     {%- comment -%}=== PAGE ONE ==={%- endcomment -%}
                     <div class="page" data-page-index="0">
@@ -17,14 +18,14 @@
                     </div>
                     {%- comment -%}=== PAGE TWO ==={%- endcomment -%}
                     <div class="page hide" data-page-index="1">
-                        <button type="button" class="btn text-link" data-prev-page="0">Prev</button>
+                        <button type="button" class="btn text-link grey" data-prev-page="0">Prev</button>
                         <label for="location">What's your location?</label>
                         <input id="location" name="location" type="text" placeholder="Nearest City">
                         <button type="button" class="btn primary" data-next-page="2">Next</button>
                     </div>
                     {%- comment -%}=== PAGE THREE ==={%- endcomment -%}
                     <div class="page hide" data-page-index="2">
-                        <button type="button" class="btn text-link" data-prev-page="1">Prev</button>
+                        <button type="button" class="btn text-link grey" data-prev-page="1">Prev</button>
                         <label for="interested-products">What product are you interested in?</label>
                         <fieldset id="interested-products" class="flex flex-r">
                             <div>
@@ -48,7 +49,7 @@
                     </div>
                     {%- comment -%}=== PAGE FOUR ==={%- endcomment -%}
                     <div class="page hide" data-page-index="3">
-                        <button type="button" class="btn text-link" data-prev-page="2">Prev</button>
+                        <button type="button" class="btn text-link grey" data-prev-page="2">Prev</button>
                         <label for="interested-volume">What volume are you interested in?</label>
                         <fieldset id="interested-volume" class="flex flex-r">
                             <div>
@@ -76,7 +77,7 @@
                     </div>
                     {%- comment -%}=== PAGE FIVE==={%- endcomment -%}
                     <div class="page hide" data-page-index="4">
-                        <button type="button" class="btn text-link" data-prev-page="3">Prev</button>
+                        <button type="button" class="btn text-link grey" data-prev-page="3">Prev</button>
                         <label for="criteria">Do you have specifc criteria to meet?</label>
                         <fieldset id="criteria" class="flex flex-r">
                             <div>
@@ -104,14 +105,14 @@
                     </div>
                     {%- comment -%}=== PAGE SIX ==={%- endcomment -%}
                     <div class="page hide" data-page-index="5">
-                        <button type="button" class="btn text-link" data-prev-page="4">Prev</button>
+                        <button type="button" class="btn text-link grey" data-prev-page="4">Prev</button>
                         <label for="email">Email Address</label>
                         <input id="email" name="email" type="email" placeholder="Please enter Email Address">
                         <button type="button" class="btn primary" data-next-page="6">Next</button>
                     </div>
                     {%- comment -%}=== PAGE SEVEN ==={%- endcomment -%}
                     <div class="page hide" data-page-index="6">
-                        <button type="button" class="btn text-link" data-prev-page="5">Prev</button>
+                        <button type="button" class="btn text-link grey" data-prev-page="5">Prev</button>
                         <label for="whats-app">Can we contact you on whatsapp?</label>
                         <fieldset id="whats-app" class="flex flex-r">
                             <div>
@@ -131,7 +132,7 @@
                     </div>
                     {%- comment -%}=== PAGE EIGHT ==={%- endcomment -%}
                     <div class="page hide" data-page-index="7">
-                        <button type="button" class="btn text-link" data-prev-page="6">Prev</button>
+                        <button type="button" class="btn text-link grey" data-prev-page="6">Prev</button>
                         <div>
                             <label for="day">What day is best to talk?</label>
                             <select name="day" id="day">
@@ -159,9 +160,18 @@
                     </div>
                     {%- comment -%}=== PAGE NINE ==={%- endcomment -%}
                     <div class="page hide" data-page-index="8">
-                        <button type="button" class="btn text-link" data-prev-page="7">Prev</button>
+                        <button type="button" class="btn text-link grey" data-prev-page="7">Prev</button>
                         <div id="form-summary"></div>
                         <button type="submit" class="btn primary" data-submit-email>SUBMIT</button>
+                    </div>
+                    <div class="success-message hide text-center">
+                        <h3>Got it! Thanks, we'll be in touch soon! </h3>
+                        <p class="grey">Lucy @ Boa Vida Co.</p> 
+                        <a href="/">
+                            <button class="btn text-link">
+                                Return Home
+                            </button>
+                        </a>
                     </div>
                 </div>
             </form>
@@ -173,6 +183,8 @@
     const pages=document.querySelectorAll('.page');
     const summaryContainer = document.getElementById('form-summary');
     const wholesaleForm = document.getElementById('wholesale-form');
+    const progressIndicator = document.querySelector('.progress-indicator');
+    const successMessage = document.querySelector('.success-message');
 
     document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("click", (e) => {
@@ -191,8 +203,12 @@
 
         const updatePage = (goToPage) => {
             pages.forEach((page) => {
-                page.getAttribute('data-page-index') == goToPage ?
-                    page.classList.remove('hide') : page.classList.add('hide')
+                if(page.getAttribute('data-page-index') == goToPage) {
+                    page.classList.remove('hide'); 
+                    progressIndicator.setAttribute("style", `--current-page: ${parseInt(goToPage)};`);
+                }else{ 
+                    page.classList.add('hide')
+                }
             });
         }
 
@@ -218,8 +234,15 @@
 
             fetch(`https://barber.codes/media/boa-vida/email-helper.php?name=${x.get('full-name')}&mobile=${x.get('mobile')}&email=${x.get('email')}`, requestOptions)
             .then(response => response.text())
-            .then(result => console.log(result))
+            .then(result => formSubmitSuccess(result))
             .catch(error => console.log('error', error));
+        }
+
+        const formSubmitSuccess = (result) => {
+            console.log(result);
+            let lastActivePage = document.querySelector('.page:not(.hide)');
+            lastActivePage.classList.add('hide');
+            successMessage.classList.remove('hide');
         }
     });
 </script>

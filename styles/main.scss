@@ -57,8 +57,16 @@ header {
     }
     .navigation {
         ul {
-            li:not(last-of-type) {
+            li:not(last-child) {
                 margin-right: 1.6rem;
+            }
+            li {
+                a {
+                    @include transition(.2s all);
+                }
+                a.page-active, a:hover {
+                    color: $themePurple;
+                }
             }
         }
     }
@@ -239,14 +247,36 @@ label {
     }
 }
 
-.page {
+.page, .success-message {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 2rem;
-    @include transition(0s transform 0.5s, 0.2s opacity 0.1s);
+    @include transition(0s position, 0.3s opacity 0.3s ease-in-out);
     &.hide {
         position: fixed;
         opacity: 0;
         top: 100vh;
+    }
+    .text-link {
+        width: fit-content;
+    }
+}
+
+.progress-indicator {
+    background: #E6E6E6;
+    height: 10px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    &:before {
+        content: '';
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        @include transition(.2s all);
+        width: calc(var(--current-page) * 12.5%);
+        background: $themePurple;
     }
 }

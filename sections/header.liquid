@@ -15,12 +15,12 @@
                             {% for link in linklists.main-menu.links %}
                                 {% assign child_list_handle = link.title | handleize %}
                                 {% if linklists[child_list_handle].links != blank %}
-                                <li><a {% if link.active %}class="bold page-active"{% endif %} href="{{ link.url }}">{{ link.title }}</a></li>
+                                <li><a class="bold {% if link.active %} page-active{% endif %}" href="{{ link.url }}">{{ link.title }}</a></li>
                                 [{% for childlink in linklists[child_list_handle].links %}
                                     <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
                                 {% endfor %}]
                                 {% else %}
-                                <li><a {% if link.active %}class="bold page-active"{% endif %} href="{{ link.url }}">{{ link.title }}</a></li>
+                                <li><a class="bold {% if link.active %} page-active{% endif %}" href="{{ link.url }}">{{ link.title }}</a></li>
                                 {% endif %}
                             {% endfor %}
                         </ul>
