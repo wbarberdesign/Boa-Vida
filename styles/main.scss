@@ -47,7 +47,7 @@ main {
 header {
     background: $themeWhite;
     position: fixed;
-    padding: 2rem;
+    padding: 0 2rem;
     width: 100%;
     top: 0;
     z-index: 10;
@@ -93,6 +93,13 @@ header {
             max-width: 100%;
         }
     }
+    .header--banner-message {
+        background: $themeBlack;
+        padding: 1rem;
+        * {
+            font-size:12px;
+        }
+    }
 }
 
 .shopify-challenge__container {
@@ -107,13 +114,14 @@ section {
     &.no-pad {
         padding-top: 0;
     }
-    &.full-width {
-        margin-left: -4rem;
-        margin-right: -4rem;
-        @include mobileOnly {
-            margin-left: -2rem;
-            margin-right: -2rem;
-        }
+}
+
+.full-width {
+    margin-left: -4rem;
+    margin-right: -4rem;
+    @include mobileOnly {
+        margin-left: -2rem;
+        margin-right: -2rem;
     }
 }
 

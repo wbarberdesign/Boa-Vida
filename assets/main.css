@@ -5288,7 +5288,7 @@ main {
 header {
   background: #FFF;
   position: fixed;
-  padding: 2rem;
+  padding: 0 2rem;
   width: 100%;
   top: 0;
   z-index: 10;
@@ -5337,6 +5337,13 @@ header .search-form {
 header .search-form.show {
   max-width: 100%;
 }
+header .header--banner-message {
+  background: #000;
+  padding: 1rem;
+}
+header .header--banner-message * {
+  font-size: 12px;
+}
 
 .shopify-challenge__container {
   padding-top: 225px;
@@ -5353,12 +5360,13 @@ section {
 section.no-pad {
   padding-top: 0;
 }
-section.full-width {
+
+.full-width {
   margin-left: -4rem;
   margin-right: -4rem;
 }
 @media (max-width: 750px) {
-  section.full-width {
+  .full-width {
     margin-left: -2rem;
     margin-right: -2rem;
   }
