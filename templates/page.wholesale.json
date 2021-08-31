@@ -1,10 +1,59 @@
 {
-    "sections": {
-        "main": {
-            "type": "wholesale-form"
-        }
+  "sections": {
+    "main": {
+      "type": "wholesale-form",
+      "settings": {
+      }
     },
-    "order": [
-        "main"
-    ]
+    "16304443875181ecc8": {
+      "type": "text-image",
+      "settings": {
+        "image_align": "right",
+        "image_ratio": "ratio-2-3",
+        "hero_image": "shopify:\/\/shop_images\/hat.jpg",
+        "title": "Our Wholesale Partners",
+        "body": "<p>Boa vida has been trading with members of the unesco heritage world area environmental things this is clearly a placeholder - very convincing though.<br\/><br\/><\/p>",
+        "cta_link": "",
+        "cta_text": ""
+      }
+    },
+    "16304443916fc0d7c6": {
+      "type": "featured-products",
+      "blocks": {
+        "19eff56b-959f-41fa-9063-203df6d84c93": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        },
+        "092fa1a2-4876-4c92-972e-e830dafdc2ad": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        },
+        "e983da29-5e28-4cfd-9d14-3c729a658793": {
+          "type": "Product",
+          "settings": {
+            "featured_product": "pure-acai"
+          }
+        }
+      },
+      "block_order": [
+        "19eff56b-959f-41fa-9063-203df6d84c93",
+        "092fa1a2-4876-4c92-972e-e830dafdc2ad",
+        "e983da29-5e28-4cfd-9d14-3c729a658793"
+      ],
+      "settings": {
+        "title": "Wholesale Products",
+        "cta_link": "shopify:\/\/collections\/all",
+        "cta_text": "Shop Wholesale"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16304443875181ecc8",
+    "16304443916fc0d7c6"
+  ]
 }
