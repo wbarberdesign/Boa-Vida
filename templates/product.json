@@ -1,18 +1,24 @@
 {
-    "sections": {
-        "main": {
-            "type": "product"
-        },
-        "dropdowns": {
-            "type": "product--dropdowns"
-        },
-        "recomendations": {
-            "type": "product-recomendations"
-        }
+  "sections": {
+    "main": {
+      "type": "product",
+      "settings": {
+      }
     },
-    "order": [
-        "main",
-        "dropdowns",
-        "recomendations"
-    ]
+    "dropdowns": {
+      "type": "product--dropdowns",
+      "settings": {
+      }
+    },
+    "recomendations": {
+      "type": "product-recomendations",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dropdowns",
+    "recomendations"
+  ]
 }

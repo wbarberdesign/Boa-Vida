@@ -1,5 +1,21 @@
 {
   "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "banner_message": "<p>20% off <strong>everything<\/strong> store wide!<\/p>"
+        }
+      },
+      "go-cart": {
+        "type": "go-cart",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
