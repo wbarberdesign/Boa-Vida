@@ -76,6 +76,10 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @include transition(.2s all);
+    .loading {
+        filter: blur(10px);
+    }
 }
 
 .image-container {
@@ -117,7 +121,7 @@ video {
 }
 
 button {
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 2rem;
     border-radius: 4rem;
     border: none;
     cursor: pointer;
@@ -131,6 +135,16 @@ button {
     }
     * {
         pointer-events: none;
+    }
+    &.text-link {
+        background: none;
+        padding: 0;
+        margin-bottom: 1em;
+        &:before {
+            content: '← ';
+            margin-right: 5px;
+            display: inline-block;
+        }
     }
 }
 
@@ -175,5 +189,47 @@ button {
                 }
             }
         }
+    }
+}
+// *=================================*
+// ====== WHOLESALE PAGE ======
+// *=================================*
+input {
+    padding: 1rem 2rem;
+    border: 1px solid #E6E6E6;
+}
+
+label {
+    display: block;
+}
+
+.wholesale-checkbox {
+    display: none;
+    + label {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        background: #E6E6E6;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+    }
+    &:checked {
+        + label {
+            background: black;
+            color: white;
+        }
+    }
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    @include transition(0s transform 0.5s, 0.2s opacity 0.1s);
+    &.hide {
+        position: fixed;
+        opacity: 0;
+        top: 100vh;
     }
 }

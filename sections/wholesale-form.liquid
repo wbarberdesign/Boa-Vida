@@ -1,0 +1,225 @@
+<section class="offset-top-large wholesale-form">
+    <div class="gc">
+        <div class="d-4-10">
+            <h1>{{ page.title }}</h1>
+            <div class="rte text-block">
+                {{ page.content | markdown }}
+            </div>
+        </div>
+        <div class="form d-4-10">
+            <form id="wholesale-form">
+                <div class="pages">
+                    {%- comment -%}=== PAGE ONE ==={%- endcomment -%}
+                    <div class="page" data-page-index="0">
+                        <label for="full-name">Hello...</label>
+                        <input id="full-name" name="full-name" type="text" placeholder="Type name">
+                        <button type="button" class="btn primary" data-next-page="1">Next</button>
+                    </div>
+                    {%- comment -%}=== PAGE TWO ==={%- endcomment -%}
+                    <div class="page hide" data-page-index="1">
+                        <button type="button" class="btn text-link" data-prev-page="0">Prev</button>
+                        <label for="location">What's your location?</label>
+                        <input id="location" name="location" type="text" placeholder="Nearest City">
+                        <button type="button" class="btn primary" data-next-page="2">Next</button>
+                    </div>
+                    {%- comment -%}=== PAGE THREE ==={%- endcomment -%}
+                    <div class="page hide" data-page-index="2">
+                        <button type="button" class="btn text-link" data-prev-page="1">Prev</button>
+                        <label for="interested-products">What product are you interested in?</label>
+                        <fieldset id="interested-products" class="flex flex-r">
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="Acai" id="acai">
+                                <label class="flex flex-center flex-middle" for="acai">Açaí</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="Cacao" id="cacao">
+                                <label class="flex flex-center flex-middle" for="cacao">Cacao</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="Coconut" id="coconut">
+                                <label class="flex flex-center flex-middle" for="coconut">Coconut</label>
+                            </div>
+                            <div>
+                                <label for="other-ingredient">Other</label>
+                                <input type="text" id="other-ingredient" placeholder="Enter other ingredient">
+                            </div>
+                        </fieldset>
+                        <button type="button" class="btn primary" data-next-page="3">Next</button>
+                    </div>
+                    {%- comment -%}=== PAGE FOUR ==={%- endcomment -%}
+                    <div class="page hide" data-page-index="3">
+                        <button type="button" class="btn text-link" data-prev-page="2">Prev</button>
+                        <label for="interested-volume">What volume are you interested in?</label>
+                        <fieldset id="interested-volume" class="flex flex-r">
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="1-2 Tons" id="1-2-tons">
+                                <label class="flex flex-center flex-middle" for="1-2-tons">1-2 Tons</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="2-5 Tons" id="2-5-tons">
+                                <label class="flex flex-center flex-middle" for="2-5-tons">2-5 Tons</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="5-10 Tons" id="5-10-tons">
+                                <label class="flex flex-center flex-middle" for="5-10-tons">5-10 Tons</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="> 10 Tons" id="greater-10-tons">
+                                <label class="flex flex-center flex-middle" for="greater-10-tons">10 > Tons</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="I Don't Know" id="dont-know">
+                                <label class="flex flex-center flex-middle" for="dont-know">I Don't Know</label>
+                            </div>
+                        </fieldset>
+                        <button type="button" class="btn primary" data-next-page="4">Next</button>
+                    </div>
+                    {%- comment -%}=== PAGE FIVE==={%- endcomment -%}
+                    <div class="page hide" data-page-index="4">
+                        <button type="button" class="btn text-link" data-prev-page="3">Prev</button>
+                        <label for="criteria">Do you have specifc criteria to meet?</label>
+                        <fieldset id="criteria" class="flex flex-r">
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="Organic" id="organic">
+                                <label class="flex flex-center flex-middle" for="organic">Organic</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="Vegan" id="vegan">
+                                <label class="flex flex-center flex-middle" for="vegan">Vegan</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="Non-GMO" id="non-gmo">
+                                <label class="flex flex-center flex-middle" for="non-gmo">Non-GMO</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="Wild" id="wild">
+                                <label class="flex flex-center flex-middle" for="wild">Wild</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="checkbox" value="Agroforestry" id="agroforestry">
+                                <label class="flex flex-center flex-middle" for="agroforestry ">Agroforestry</label>
+                            </div>
+                        </fieldset>
+                        <button type="button" class="btn primary" data-next-page="5">Next</button>
+                    </div>
+                    {%- comment -%}=== PAGE SIX ==={%- endcomment -%}
+                    <div class="page hide" data-page-index="5">
+                        <button type="button" class="btn text-link" data-prev-page="4">Prev</button>
+                        <label for="email">Email Address</label>
+                        <input id="email" name="email" type="email" placeholder="Please enter Email Address">
+                        <button type="button" class="btn primary" data-next-page="6">Next</button>
+                    </div>
+                    {%- comment -%}=== PAGE SEVEN ==={%- endcomment -%}
+                    <div class="page hide" data-page-index="6">
+                        <button type="button" class="btn text-link" data-prev-page="5">Prev</button>
+                        <label for="whats-app">Can we contact you on whatsapp?</label>
+                        <fieldset id="whats-app" class="flex flex-r">
+                            <div>
+                                <input class="wholesale-checkbox" type="radio" value="No" name="whats-app" id="whats-app-no">
+                                <label class="flex flex-center flex-middle" for="whats-app-no">No</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="radio" name="whats-app"  value="Yes" id="whats-app-yes" checked>
+                                <label class="flex flex-center flex-middle" for="whats-app-yes">Yes</label>
+                            </div>
+                        </fieldset>
+                        <div>
+                            <label for="mobile">Mobile Number</label>
+                            <input id="mobile" name="mobile" type="tel" placeholder="Please Enter Mobile Number">
+                        </div>
+                        <button type="button" class="btn primary" data-next-page="7">Next</button>
+                    </div>
+                    {%- comment -%}=== PAGE EIGHT ==={%- endcomment -%}
+                    <div class="page hide" data-page-index="7">
+                        <button type="button" class="btn text-link" data-prev-page="6">Prev</button>
+                        <div>
+                            <label for="day">What day is best to talk?</label>
+                            <select name="day" id="day">
+                                <option value="Mon">Mon</option>
+                                <option value="Tue">Tue</option>
+                                <option value="Wed">Wed</option>    
+                                <option value="Thu">Thu</option>
+                                <option value="Fri">Fri</option>
+                                <option value="Sat">Sat</option>
+                                <option value="Sun">Sun</option>
+                            </select>
+                        </div>
+                        <label for="am-pm">AM or PM?</label>
+                        <fieldset id="am-pm" class="flex flex-r">
+                            <div>
+                                <input class="wholesale-checkbox" type="radio" value="AM" name="am-pm" id="am">
+                                <label class="flex flex-center flex-middle" for="am">AM</label>
+                            </div>
+                            <div>
+                                <input class="wholesale-checkbox" type="radio" name="am-pm"  value="PM" id="pm" checked>
+                                <label class="flex flex-center flex-middle" for="pm">PM</label>
+                            </div>
+                        </fieldset>
+                        <button type="button" class="btn primary" data-next-page="8" data-load-summary="true">Next</button>
+                    </div>
+                    {%- comment -%}=== PAGE NINE ==={%- endcomment -%}
+                    <div class="page hide" data-page-index="8">
+                        <button type="button" class="btn text-link" data-prev-page="7">Prev</button>
+                        <div id="form-summary"></div>
+                        <button type="submit" class="btn primary" data-submit-email>SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    const pages=document.querySelectorAll('.page');
+    const summaryContainer = document.getElementById('form-summary');
+    const wholesaleForm = document.getElementById('wholesale-form');
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("click", (e) => {
+            // NEXT PAGE 
+            e.target.hasAttribute('data-next-page') ?
+                updatePage(e.target.getAttribute('data-next-page')) :
+            e.target.hasAttribute('data-prev-page') ?
+                updatePage(e.target.getAttribute('data-prev-page')) : null
+            // FORM SUMMARY
+            e.target.hasAttribute('data-load-summary') ?
+                loadSummary() : null
+            // FORM SUUBMIT
+            e.target.hasAttribute('data-submit-email') ?
+                sendEmail(e) : null
+        });
+
+        const updatePage = (goToPage) => {
+            pages.forEach((page) => {
+                page.getAttribute('data-page-index') == goToPage ?
+                    page.classList.remove('hide') : page.classList.add('hide')
+            });
+        }
+
+        const loadSummary = () => {
+            let x = new FormData(wholesaleForm)
+            summaryContainer.innerHTML = `
+                <h2>Form Summary</h2>
+                <p><b>Name</b> ${x.get('full-name')}</p>
+                <p><b>Location</b> ${x.get('location')}</p>
+                <p><b>Email</b> ${x.get('email')}</p>
+                <p><b>Mobile</b> ${x.get('mobile')}</p>
+                <p><b>Whats App?</b> ${x.get('whats-app')}</p>
+            `;
+        }
+
+        const sendEmail = (e) => {
+            e.preventDefault();
+            let x = new FormData(wholesaleForm)
+            var requestOptions = {
+                method: 'POST',
+                redirect: 'follow'
+            };
+
+        fetch(`https://barber.codes/media/boa-via/email-helper.php?name=${x.get('full-name')}&mobile=${x.get('mobile')}&email=${x.get('email')}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log('Mail sent successfully.'))
+        .catch(error => console.log('error', error));
+        }
+    });
+</script>
