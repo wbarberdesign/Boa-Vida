@@ -30,7 +30,7 @@
         <div class="d-7-11 offset-top-medium">
             <div class="product--meta text-block">
                 <h1>{{ product.title }}</h1>
-                <p>{{ product.price | money_with_currency }}</p>
+                <p class="product-price">{{ product.price | money_with_currency }}</p>
                 <form action="/cart/add" method="post" enctype="multipart/form-data"  
                 id="add-to-cart-{{ product.handle }}-{{ collection.handle }}-{{ section.id }}">
                 {% if product.variants.size > 0 %}
@@ -43,6 +43,7 @@
                             type="radio" 
                             name="id" 
                             data-variant-option
+                            data-variant-price="{{ variant.price | money_with_currency }}"
                             id="{{ variant.id }}"
                             value="{{ variant.id }}" 
                             {% if variant.selected %}checked{% endif %}
@@ -91,6 +92,7 @@
     const addToCartButton=document.querySelector('button[data-add-to-cart]');
     const preselectedVariant=document.querySelectorAll('input[name="id"]:checked');
     const variantOptions=document.querySelectorAll('input[name="id"]');
+    const productPrice=document.querySelector('.product-price');
 
     // ON MANUAL VARIANT SELECT
     var prev = null;
@@ -98,6 +100,7 @@
         variantOptions[i].addEventListener('change', function() {
             if (this !== prev) {
                 prev = this;
+                productPrice.innerHTML=variantOptions[i].getAttribute('data-variant-price');
                 addToCartButtonText.innerHTML='Add to cart';
                 addToCartButton.classList.remove('disabled');
                 addToCartButton.removeAttribute('disabled');
