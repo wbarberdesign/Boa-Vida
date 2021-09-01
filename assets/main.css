@@ -5670,7 +5670,8 @@ details > summary::-webkit-details-marker {
   font-size: 2.4rem;
 }
 .quantity-group input {
-  width: 60px;
+  width: 200px;
+  text-align: center;
 }
 
 section[data-section-id=cart] .gc {
