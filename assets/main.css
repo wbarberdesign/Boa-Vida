@@ -5669,6 +5669,10 @@ details > summary::-webkit-details-marker {
 .quantity-group {
   border: 3px solid black;
   border-radius: 50px;
+  display: grid;
+  grid-template-columns: 50px 100px 50px;
+  grid-gap: 1rem;
+  width: max-content;
 }
 .quantity-group button {
   font-size: 2.4rem;
@@ -5678,8 +5682,10 @@ details > summary::-webkit-details-marker {
   margin: 0;
 }
 .quantity-group input {
-  width: 200px;
+  width: 100%;
   text-align: center;
+  border: none;
+  font-family: "Sofia-Bold";
 }
 
 section[data-section-id=cart] .gc {
