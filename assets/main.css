@@ -5467,6 +5467,11 @@ video {
 .button-group a:not(:last-of-type) button {
   margin-right: 2rem;
 }
+@media (max-width: 750px) {
+  .button-group a:not(:last-of-type) button {
+    margin-right: 0;
+  }
+}
 
 button {
   padding: 1.5rem 2rem;
