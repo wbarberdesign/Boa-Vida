@@ -68,6 +68,17 @@
     </div>
 </header>
 
+<script>
+    const mobileMenu = document.querySelector('.nav-main');
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("click", (e) => {
+            e.hasAttribute('data-toggle-mobile-menu') ?
+                mobileMenu.classList.toggle('active') : null
+        });
+    });
+</script>
+
 {% schema %}
 {
     "settings": [
