@@ -100,7 +100,7 @@
         variantOptions[i].addEventListener('change', function() {
             if (this !== prev) {
                 prev = this;
-                productPrice.innerHTML=variantOptions[i].getAttribute('data-variant-price');
+                productPrice.innerHTML=this.getAttribute('data-variant-price');
                 addToCartButtonText.innerHTML='Add to cart';
                 addToCartButton.classList.remove('disabled');
                 addToCartButton.removeAttribute('disabled');
