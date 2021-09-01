@@ -13,7 +13,7 @@
   <link rel="mask-icon" href="https://cdn.shopify.com/s/files/1/0582/1284/3714/files/safari-pinned-tab.svg?v=1630443644" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-
+  {% include 'social-meta-tags' %}
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'main.css' | asset_url | stylesheet_tag }}
