@@ -5658,7 +5658,7 @@ details > summary::-webkit-details-marker {
 
 .product--carousel {
   padding-bottom: 4rem;
-  height: calc(50vw - 6rem);
+  height: calc(50vw - 2rem);
 }
 @media (max-width: 750px) {
   .product--carousel {
