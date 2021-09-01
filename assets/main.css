@@ -5673,6 +5673,7 @@ details > summary::-webkit-details-marker {
   grid-template-columns: 50px 100px 50px;
   grid-gap: 1rem;
   width: max-content;
+  margin-bottom: 2rem;
 }
 .quantity-group button {
   font-size: 2.4rem;
