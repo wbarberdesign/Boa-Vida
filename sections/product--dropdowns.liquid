@@ -7,6 +7,24 @@
                     <div class="text-block">{{ product.metafields.custom.whereToBuy | markdown }}</div>
                 </details>
             {% endif %}
+            {% if product.metafields.custom.recipes %}
+                <details>
+                    <summary>Recipes</summary>
+                    <div class="text-block">{{ product.metafields.custom.whereToBuy | markdown }}</div>
+                </details>
+            {% endif %}
+            {% if product.metafields.custom.ingredients %}
+                <details>
+                    <summary>Ingredients</summary>
+                    <div class="text-block">{{ product.metafields.custom.ingredients | markdown }}</div>
+                </details>
+            {% endif %}
+            {% if product.metafields.custom.more_information %}
+                <details>
+                    <summary>More Information</summary>
+                    <div class="text-block">{{ product.metafields.custom.more_information | markdown }}</div>
+                </details>
+            {% endif %}
         </div>
     </div>
 </section>
