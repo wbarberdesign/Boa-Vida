@@ -5543,6 +5543,9 @@ button.text-link.next:after {
   margin-left: 5px;
   display: inline-block;
 }
+button.no-pad {
+  padding: 0;
+}
 
 details .text-block {
   max-height: 0;
