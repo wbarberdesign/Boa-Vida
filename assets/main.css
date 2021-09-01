@@ -5316,6 +5316,9 @@ header .navigation ul li a {
 header .navigation ul li a.page-active, header .navigation ul li a:hover {
   color: #3C0C5A;
 }
+header button[data-toggle-mobile-menu] {
+  z-index: 2;
+}
 header .cart-icon-container {
   position: relative;
 }
