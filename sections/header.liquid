@@ -73,7 +73,7 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("click", (e) => {
-            e.hasAttribute('data-toggle-mobile-menu') ?
+            e.target.hasAttribute('data-toggle-mobile-menu') ?
                 mobileMenu.classList.toggle('active') : null
         });
     });
