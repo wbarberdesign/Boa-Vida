@@ -5675,6 +5675,7 @@ details > summary::-webkit-details-marker {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 .quantity-group input {
   width: 200px;
