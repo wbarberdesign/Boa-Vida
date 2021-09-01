@@ -4232,16 +4232,18 @@ button {
 }
 
 h1, .h1,
-h2, .h2,
-.large {
+h2, .h2 {
   font-size: 4.8rem;
 }
 @media (max-width: 750px) {
   h1, .h1,
-h2, .h2,
-.large {
+h2, .h2 {
     font-size: 3rem;
   }
+}
+
+.x-large {
+  font-size: 6.4rem;
 }
 
 p, span {
@@ -5290,7 +5292,7 @@ main {
 header {
   background: #FFF;
   position: fixed;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   width: 100%;
   top: 0;
   z-index: 10;
