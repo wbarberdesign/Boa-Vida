@@ -4,25 +4,25 @@
             {% if product.metafields.custom.whereToBuy %}
                 <details>
                     <summary>Where to buy</summary>
-                    <div class="text-block">{{ product.metafields.custom.whereToBuy | markdown }}</div>
+                    <div class="text-block">{{ product.metafields.custom.whereToBuy | html }}</div>
                 </details>
             {% endif %}
             {% if product.metafields.custom.recipes %}
                 <details>
                     <summary>Recipes</summary>
-                    <div class="text-block">{{ product.metafields.custom.whereToBuy | markdown }}</div>
+                    <div class="text-block">{{ product.metafields.custom.whereToBuy | html }}</div>
                 </details>
             {% endif %}
             {% if product.metafields.custom.ingredients %}
                 <details>
                     <summary>Ingredients</summary>
-                    <div class="text-block">{{ product.metafields.custom.ingredients | markdown }}</div>
+                    <div class="text-block">{{ product.metafields.custom.ingredients | html }}</div>
                 </details>
             {% endif %}
             {% if product.metafields.custom.more_information %}
                 <details>
                     <summary>More Information</summary>
-                    <div class="text-block">{{ product.metafields.custom.more_information | markdown }}</div>
+                    <div class="text-block">{{ product.metafields.custom.more_information | html }}</div>
                 </details>
             {% endif %}
         </div>
