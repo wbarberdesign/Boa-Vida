@@ -5765,7 +5765,7 @@ section[data-section-id=cart] .gc {
   }
 }
 
-input {
+input[type=text] {
   padding: 1rem 2rem;
   border: 1px solid #E6E6E6;
 }
