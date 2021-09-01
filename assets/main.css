@@ -4283,9 +4283,6 @@ h4, .h4 {
 .text-block.text-block--no-spacing h1, .text-block.text-block--no-spacing h2, .text-block.text-block--no-spacing h3, .text-block.text-block--no-spacing h4, .text-block.text-block--no-spacing h5, .text-block.text-block--no-spacing ul, .text-block.text-block--no-spacing p, .text-block.text-block--no-spacing b, .text-block.text-block--no-spacing blockquote, .text-block.text-block--no-spacing button {
   margin-bottom: 0;
 }
-.text-block * {
-  line-height: 160%;
-}
 
 /**
  * Swiper 6.7.5
