@@ -286,6 +286,9 @@ details > summary::-webkit-details-marker {
     position: relative;
     display: block;
     cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    @include transition(.2s all);
     &.card--product {
         .card--product-inner-grid {
             display: grid;
@@ -326,6 +329,7 @@ details > summary::-webkit-details-marker {
         @include transition(.2s all);
     }
     &:hover {
+        background: #F9F9F9;
         .card--hover-image {
             opacity: 1;
         }
@@ -383,7 +387,7 @@ section[data-section-id="cart"] {
         }
     }
     .gradient-overlay {
-        background: rgba(0,0,0,0.4);
+        background: rgba(0,0,0,0.2);
         width: 100%;
         height: 100%;
     }
