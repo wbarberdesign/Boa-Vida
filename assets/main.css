@@ -5397,6 +5397,10 @@ header .header--banner-message * {
   }
 }
 
+footer {
+  margin: 0 4rem;
+}
+
 .shopify-challenge__container {
   padding-top: 225px;
 }
