@@ -4,11 +4,16 @@
       "header": {
         "type": "header",
         "settings": {
-          "banner_message": "<p>20% off <strong>everything<\/strong> store wide!<\/p>"
+          "banner_message": "<p>Check our *new* <strong>AÇAI SCOOP<\/strong> (vegan ice cream) <\/p>"
         }
       },
       "go-cart": {
         "type": "go-cart",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
         "settings": {
         }
       }
