@@ -5666,6 +5666,13 @@ details > summary::-webkit-details-marker {
   }
 }
 
+.quantity-group button {
+  font-size: 2.4rem;
+}
+.quantity-group input {
+  width: 60px;
+}
+
 section[data-section-id=cart] .gc {
   row-gap: 0;
 }
