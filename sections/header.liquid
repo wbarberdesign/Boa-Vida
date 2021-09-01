@@ -35,6 +35,21 @@
                 <div class="navigation">
                     <ul class="flex flex-middle flex-r">
                         <li>{% include 'search' %}</li>
+                        <li>
+                            <div class="shopify-localization-form desktop-only">
+                                {% form 'localization' %}
+                                <select name="country_code" class="small country-code">
+                                    {% for country in localization.available_countries %}
+                                    <option value="{{ country.iso_code }}"
+                                        {%- if country == localization.country %} selected="selected"{% endif %}
+                                    >
+                                        {{ country.iso_code }}
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                                {% endform %}              
+                            </div>
+                        </li>
                         <li>{% include 'go-cart-button' %}</li>
                         {% if shop.customer_accounts_enabled %}
                             {% if customer %}

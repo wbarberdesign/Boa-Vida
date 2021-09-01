@@ -4,6 +4,7 @@
             <div class="d-1-13 text-center">
                 <h1>{{ collection.title }}</h1>
             </div>
+            {%- comment -%}
             <div class="d-1-4 filters">
                 <nav>
                     <h3>Filters</h3>
@@ -16,6 +17,7 @@
                     </ul>
                 </nav>
             </div>
+            {%- endcomment -%}
             <div class="d-4-13 collection--product-grid">
                 {% if collection.products_count > 0 %}
                     {% for product in collection.products %}
