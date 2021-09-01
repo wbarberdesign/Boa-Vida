@@ -5539,7 +5539,7 @@ details .text-block {
 }
 details summary {
   border-bottom: 3px solid #000;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
   position: relative;
 }
 details summary:after {
