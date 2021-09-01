@@ -3909,6 +3909,11 @@ html, body {
 .offset-top-medium {
   margin-top: 100px;
 }
+@media (max-width: 750px) {
+  .offset-top-medium {
+    margin-top: 20px;
+  }
+}
 
 .offset-top-small {
   margin-top: 50px;
