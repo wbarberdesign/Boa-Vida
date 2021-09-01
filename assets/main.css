@@ -5639,6 +5639,9 @@ section[data-section-id=cart] .gc {
     object-fit: cover;
   }
 }
+.home-intro .gradient-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
 
 .wholesale-form .flex-r {
   flex-wrap: wrap;

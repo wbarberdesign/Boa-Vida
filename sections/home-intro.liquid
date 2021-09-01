@@ -7,6 +7,11 @@
                 </video>
             {% endif %}
         </div>
+        {% if section.settings.gradient == true %}
+            <div class="d-1-13 r-1">
+                <div class="gradient-overlay"></div>
+            </div>
+        {% endif %}
         <div class="d-4-10 r-1 flex flex-middle flex-center flex-column text-center text-block" style="z-index: 2;">
             {% if section.settings.hero_statement %}
                 <blockquote class="white">{{ section.settings.hero_statement | strip_html }}</blockquote>
@@ -39,6 +44,12 @@
             "id": "video",
             "label": "Video Background",
             "info": "Upload a video file < 20mb to shopify / files and paste the link above."
+        },
+        {
+            "type": "checkbox",
+            "id": "gradient",
+            "label": "Gradient Overlay?",
+            "default": true
         },
         {
             "type": "richtext",
