@@ -5658,6 +5658,12 @@ details > summary::-webkit-details-marker {
 
 .product--carousel {
   padding-bottom: 4rem;
+  height: calc(50vw - 6rem);
+}
+@media (max-width: 750px) {
+  .product--carousel {
+    height: auto;
+  }
 }
 
 section[data-section-id=cart] .gc {
